@@ -1,0 +1,102 @@
+.ui-menu{
+  font-size: .3rem;
+  display: flex;
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: .6rem;
+  background-color: #F3F3F3!important;
+  padding: 3px;
+  box-sizing: border-box;
+}
+.ui-menu div{
+  width: 50%;
+  height: .8rem;
+  line-height: .8rem;
+  background-color: #c1c1c1;
+  text-align: center;
+  color: #FEFEFE;
+}
+.checked{
+  background-color: #D3D3D5!important;
+  color: #000!important;
+}
+
+.status{
+  font-size: .3rem;
+  margin-top: .8rem;
+  background-color: #F3F3F3;
+}
+.firline{
+  padding-top: .1rem;
+}
+.status span{
+  font-weight: 500;
+}
+.status-lines div{
+  display: flex;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  box-sizing: border-box;
+  margin-top: .2rem;
+  padding-bottom: .2rem;
+}
+.lines-title{
+  width: 40%;
+  text-align: left;
+}
+.lines-content{
+  width: 59%;
+  text-align: right;
+}
+.border{
+  border-bottom: .2rem solid #D3D3D5;
+}
+.small-border{
+  border-bottom: 1px solid #ccc;
+}
+
+
+
+
+.ui-table {
+  width: 16.36rem;
+  margin-top: .8rem;
+}
+.ui-list {
+  padding: 0 0.08rem;
+}
+.ui-list.is-thead .ui-item {
+  background-color: #F5F2F5;
+}
+.ui-item {
+  display: flex;
+  align-items: center;
+  font-size: 0;
+}
+.ui-item:nth-child(2n-1) {
+  background-color: #fff;
+}
+.ui-item__cell {
+  padding: 0.3rem 0.1rem;
+  line-height: 1.5;
+  font-size: 0.26rem;
+  font-weight: normal;
+  color: #202020;
+  text-align: center;
+  margin-right: 1rem;
+}
+.ui-item__cell.is-date {
+  width: 2.5rem;
+}
+.ui-item__cell.is-job {
+  width: 4.5rem;
+}
+.ui-item__cell.is-status {
+  width: 3.5rem;
+}
+.ui-item__cell.is-msg {
+  width: 3.5rem;
+  margin-right: 0;
+}

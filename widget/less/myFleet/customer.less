@@ -1,0 +1,66 @@
+@import "../base/_config";
+
+@font-weight: normal;
+@font-size: .3rem;
+
+//搜索框
+.ui-search {
+    position: relative;
+    height: .91rem;
+    margin-bottom: .9rem;
+    padding: 0 .32rem;
+    background-color: #d3d4d4;
+    overflow: hidden;
+}
+
+.ui-search__icon{
+    position: absolute;
+    left: .39rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: .4rem;
+    width: .4rem;
+    background: url(../../image/myFleet/search.png) no-repeat;
+    background-size: contain;
+}
+
+.ui-search input {
+    position: absolute;
+    left: .99rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    outline: none;
+    font-size: .3rem;
+    font-weight: @font-weight;
+    color: #8c8d8d;
+    background-color: #d3d4d4;
+}
+
+//内容区
+.ui-content{
+    position: relative;
+    width: 7.5rem;
+    height: .9rem;
+    line-height: .9rem;
+    padding-left: .36rem;
+    padding-right: .36rem;
+    font-size: .3rem;
+    color: #202020;
+    background-color: #d3d4d4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// .ui-content div{
+//     position: absolute;
+//     left: .36rem;
+//     line-height: .89rem;
+//     width: 95%;
+//     font-size: .3rem;
+//     font-weight: @font-weight;
+//     overflow:hidden;
+//     text-overflow:ellipsis;
+//     white-space:nowrap;
+// }

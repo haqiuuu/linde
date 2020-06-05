@@ -1,0 +1,115 @@
+@import './baseForm.less';
+
+html, body {
+  background-color: transparent;
+}
+
+.ui-main {
+  // height: 100%;
+  // background: url('../../image/account/bg.png') no-repeat top center/cover;
+  position:absolute;
+  height: 100%;
+  width: 100%;
+  // background: url('../../image/account/bg.png') no-repeat;
+  // background-size: contain;
+  // background-size: cover;
+}
+
+
+
+.ui-main__container {
+  height: 100%;
+  // background-color: rgba(255, 255, 255, .5);
+  padding: .98rem .87rem 2rem .86rem;
+
+  .ui-main__title {
+    font-size: .48rem;
+    color: #161616;
+    font-weight: 700;
+    padding-bottom: .15rem;
+  }
+}
+.ui-form__item input{
+  height: .5rem;
+}
+
+.ui-form__phone {
+  input {
+    padding-left: 1rem;
+  }
+}
+
+
+.ui-form__code, .ui-form__truckSN, .ui-form__phone {
+  position: relative;
+}
+
+.ui-form__getCode, .ui-form__scan {
+  right: 0;
+  font-size: .28rem;
+  line-height: 1;
+}
+
+ .ui-form__item .ui-form__dropdown {
+  position: absolute;
+  bottom: .15rem;
+}
+
+.ui-form__dropdown {
+  font-size: .15rem;
+  color: #767476;
+  left: 0;
+  width: 1rem;
+  line-height: 1;
+  padding-right: .25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .ui-dropdown__title {
+    font-size: .19rem;
+    padding-right: .13rem;
+    vertical-align: middle;
+  }
+}
+
+.ui-dropdown__items {
+  z-index: 2;
+  width: 3.33rem;
+  position: absolute;
+  bottom: -1.13rem;
+  left: 0;
+
+  .current {
+    background-color: #FAEBED;
+    color: #BE051F;
+  }
+}
+.ui-dropdown__item {
+  font-size: .15rem;
+  height: .373rem;
+  padding-left: .166rem;
+  line-height: .373rem;
+  background-color: #fff;
+}
+
+.ui-dropdown__icon {
+  width: .18rem;
+  height: .13rem;
+  background: url("../../image/account/arrow-down.png") no-repeat center center/cover;
+}
+
+.ui-form__getCode, .ui-form__scan {
+  position: absolute;
+  bottom: .12rem;
+}
+
+.ui_disabled {
+  color: @garyColor;
+}
+
+.ui-form__truckSN .ui-form__scan {
+  width: .53rem;
+  height: .48rem;
+  background: url("../../image/account/scan.png") no-repeat center center/cover;
+}

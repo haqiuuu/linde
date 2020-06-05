@@ -1,0 +1,95 @@
+@import "../base/_config";
+
+//
+@font-weight:400;
+@font-size:.30rem;
+
+.ui-main{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #F5F2F5;
+}
+//搜索框
+.ui-search {
+    position: relative;
+    height: .91rem;
+    margin-bottom: .43rem;
+    padding: 0 .32rem;
+    background-color: #d3d4d4;
+    overflow: hidden;
+}
+.ui-search .ui-search_icon{
+    position: absolute;
+    left: .39rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: .4rem;
+    width: .4rem;
+    background: url(../../image/news/search.png) no-repeat;
+    background-size: contain;
+
+}
+.ui-search input{
+    position: absolute;
+    left: .99rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    outline: none;
+    font-size: @font-size;
+    font-weight: @font-weight;
+    color: #8c8d8d;
+    background-color: #d3d4d4;
+}
+
+//展示项
+.ui-item {
+    height: 2rem;
+    margin: 0 .07rem .44rem .07rem;
+}
+.ui-item .ui-item_date{
+    position: relative;
+    // height: 50%;
+    height: 1.11rem;
+    width: 100%;
+    padding: 0 .5rem;
+    background-color: #999999;
+}
+.ui-item .ui-item_content{
+    position: relative;
+    height: 1.11rem;
+    width: 100%;
+    padding: 0 .5rem;
+    background-color: #d3d3d4;
+    font-size: @font-size;
+}
+.ui-item_content span{
+    position: absolute;
+    left: .33rem;
+    width: 95%;
+    line-height: 1.11rem;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-weight: @font-weight;
+}
+.ui-item_date .ui-item_icon{
+    position: absolute;
+    left: .33rem;
+    top: .34rem;
+    width: .39rem;
+    height: .39rem;
+    background: url(../../image/news/calender.png) no-repeat;
+    background-size: contain;
+}
+.ui-item_date .ui-item_time{
+    position: absolute;
+    left: .94rem;
+    line-height: 1.11rem;
+    font-size: @font-size;
+    font-weight: @font-weight;
+    color: #ffffff;
+}
+
+

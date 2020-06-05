@@ -1,0 +1,110 @@
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+.ui-main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #F5F2F5;
+}
+.ui-item {
+  position: relative;
+  width: 7.37rem;
+  height: 1.02rem;
+  margin: 0.06rem;
+  background-color: #ffffff;
+}
+.ui-item span {
+  position: absolute;
+  left: 0.39rem;
+  line-height: 1.02rem;
+  font-size: 0.32rem;
+  font-weight: 400;
+  color: #333333;
+}
+.ui-item > div {
+  position: absolute;
+  right: 0.65rem;
+  line-height: 1.02rem;
+  font-size: 0.3rem;
+  font-weight: 400;
+  color: #BF001D;
+}
+.ui-item .ui-toggleLanguageDown {
+  position: absolute;
+  right: 0.2rem;
+  top: 0.43rem;
+  width: 0.25rem;
+  height: 0.2rem;
+  background: url(../../image/setting/triangleDown.png) no-repeat;
+  background-size: contain;
+}
+.ui-item .ui-toggleLanguageUp {
+  position: absolute;
+  right: 0.2rem;
+  top: 0.43rem;
+  width: 0.25rem;
+  height: 0.2rem;
+  background: url(../../image/setting/triangleTop.png) no-repeat;
+  background-size: contain;
+}
+.ui-menu {
+  position: absolute;
+  top: 1.15rem;
+  right: 0.07rem;
+  background-color: #f3f3f3;
+}
+.ui-menu li {
+  width: 1.76rem;
+  height: 0.85rem;
+  line-height: 0.85rem;
+  text-align: center;
+  font-size: 0.3rem;
+  font-weight: 400;
+  border-bottom: 1px solid #E5E5E5;
+  color: #807E7E;
+}
+.current {
+  color: #BF001D !important;
+}
+.ui-switch {
+  position: absolute!important;
+  right: 0.27rem !important;
+  top: 0.28rem;
+  width: 1.37rem;
+  height: 0.6rem;
+  border: 0.05rem solid #BF001D;
+  border-radius: 0.05rem;
+}
+.ui-switch .ui-switch_off {
+  float: right;
+  width: 50%;
+  height: 100%;
+  line-height: 0.5rem;
+  text-align: center;
+  font-size: 0.25rem;
+  background-color: #BF001D;
+  color: #FFFFFF;
+}
+.ui-switch .ui-switch_on {
+  float: left;
+  width: 50%;
+  height: 100%;
+  line-height: 0.5rem;
+  text-align: center;
+  font-size: 0.25rem;
+  background-color: #BF001D;
+  color: #FFFFFF;
+}

@@ -1,0 +1,90 @@
+<div>
+  <div class="ui-main">
+      <div class="ui-username" v-hammer:tap="onOpenName">
+          <div class="ui-username_icon"></div>
+          <span>{{language.setting_account_name}}</span>
+          <div class="ui-username_name">{{userInfo.userName}}</div>
+      </div>
+      <div class="ui-phone" v-hammer:tap="onOpenPhone">
+          <div class="ui-phone_icon"></div>
+          <span>{{language.setting_account_phone}}</span>
+          <div class="ui-phone_number">{{userInfo.phone}}</div>
+      </div>
+      <div class="ui-mailbox" v-hammer:tap="onOpenEmail">
+          <div class="ui-mailbox_icon"></div>
+          <span>{{language.setting_account_mail}}</span>
+          <div class="ui-mailbox_account">{{userInfo.email}}</div>
+      </div>
+      <!-- <div class="ui-setCode" v-hammer:tap="onOpenmsg2"> -->
+      <div class="ui-setCode">
+          <div class="ui-setCode_icon"></div>
+          <span>{{language.setting_account_code}}</span>
+          <div class="ui-mailbox_account">{{userInfo.customCode}}</div>
+      </div>
+      <!-- <div class="ui-setTruck" v-hammer:tap="onOpenmsg"> -->
+      <div class="ui-setTruck">
+          <div class="ui-setTruck_icon"></div>
+          <span>{{language.setting_account_truck}}</span>
+          <div class="ui-mailbox_account">{{userInfo.truckSN}}</div>
+      </div>
+      <div class="ui-resetPassword" v-hammer:tap="onOpenReset">
+          <div class="ui-resetPassword_icon"></div>
+          <span>{{language.setting_account_reset}}</span>
+      </div>
+  </div>
+  <!--弹窗-->
+  <div class="message-wrapper" v-if='showmessage'>
+    <div class="message-bac">
+    </div>
+    <div class="message-contet">
+      <div class="content-header">
+          <span>{{title}}</span>
+      </div>
+      <div class="content-input">
+          <input type="text" :placeholder="holder" v-model="operteInput">
+      </div>
+      <div class="button-group">
+        <div v-hammer:tap="onClosemsg">
+          <span>Cancel</span>
+        </div>
+        <div class="button-split">
+          <span>|</span>
+        </div>
+        <div v-hammer:tap="onSubmit">
+          <span>Confirm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--弹窗2-->
+  <div class="message-wrapper" v-show="showReset">
+    <div class="message-bac">
+    </div>
+    <div class="message-contet2">
+      <div class="content-header">
+          <span>Password Reset</span>
+      </div>
+      <div class="content-input">
+          <input type="password" v-model="old" placeholder="Enter Old Password">
+      </div>
+      <div class="content-input">
+          <input type="password" v-model="newpswd" placeholder="Enter New Password">
+      </div>
+      <div class="content-input">
+          <input type="password" v-model="renew" placeholder="Confirm New Password">
+      </div>
+      <div class="button-group">
+        <div v-hammer:tap="onCloseReset">
+          <span>Cancel</span>
+        </div>
+        <div class="button-split">
+          <span>|</span>
+        </div>
+        <div class="" v-hammer:tap="onConfirmReset">
+          <span>Confirm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

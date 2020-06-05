@@ -1,0 +1,62 @@
+@import "../base/_config";
+
+//
+@font-weight:400;
+@font-size:.30rem;
+
+.ui-headTab{
+    width: 7.38rem;
+    height: .89rem;
+    margin: .07rem;
+    background-color: #d3d3d4;
+}
+.ui-headTab .ui-leftTab{
+    float: left;
+    width: 50%;
+    height: 100%;
+    line-height: .89rem;
+    font-size: @font-size;
+    text-align: center;
+    background-color: #999999;
+    color: #FFFEFE;
+}
+.ui-headTab .rightTab{
+    float: left;
+    width: 50%;
+    line-height: .89rem;
+    font-size: @font-size;
+    font-weight: @font-weight;
+    text-align: center;
+    color: #333333;
+}
+
+// 内容区
+.ui-content{
+    margin: 0 .07rem 0 .07rem;
+    padding-bottom: .64rem;
+    background-color: #D3D3D4;
+    overflow: hidden;
+}
+.ui-item{
+    overflow: hidden;
+}
+.leftItem{
+    float: left;
+    width: 50%;
+    padding: .51rem 0 0 .43rem;
+    font-size: @font-size;
+    font-weight: @font-weight;
+    color: #333333;
+}
+.rightItem{
+    float: right;
+    width: 50%;
+    height: 100%;
+    padding: .51rem 0 0 .43rem;
+    font-size: @font-size;
+    font-weight: @font-weight;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:wrap;
+    color: #333333;
+}

@@ -1,0 +1,232 @@
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+textarea:focus {
+  outline: none;
+}
+.ui-form {
+  padding: 0.073rem 0.066rem;
+  background-color: #fff;
+  margin-bottom: 70px;
+}
+.ui-form__title {
+  height: 0.68rem;
+  background-color: #999998;
+  color: #fff;
+  margin-bottom: 0.1rem;
+  width: 100%;
+  font-size: 0.25rem;
+  line-height: 0.68rem;
+  text-align: center;
+}
+.ui-form__top {
+  padding-top: 0.34rem;
+  background-color: #D2D2D3;
+  padding-bottom: 0.45rem;
+  margin-top: 0.1rem;
+}
+.ui-form__item {
+  padding: 0 0.32rem 0.47rem;
+  min-height: 0.653rem;
+  display: flex;
+}
+.ui-item__label {
+  font-size: 0.25rem;
+  line-height: 1;
+  color: #5B5B5B;
+  width: 2.25rem;
+  text-align: left;
+}
+.ui-item__value {
+  word-break: break-all;
+  flex: 1;
+  line-height: 1;
+  color: #5B5B5B;
+  font-size: 0.25rem;
+}
+.ui-item__value input,
+.ui-item__value textarea {
+  width: 100%;
+  border: none;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+.ui-item__input:first-child {
+  height: 0.56rem;
+  line-height: 0.56rem;
+  background-color: #D2D3D3;
+}
+.ui-item__input {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+.ui-item__input img {
+  position: absolute;
+  right: 0;
+  bottom: 0.1rem;
+  width: 0.28rem;
+  height: 0.24rem;
+}
+.ui-item__input .ui-img__down {
+  width: 0.32rem;
+  height: 0.24rem;
+}
+.ui-item__input input,
+.ui-item__input textarea {
+  padding-right: 0.4rem;
+}
+.ui-form__tips {
+  height: 0.24rem;
+  font-size: 0.24rem;
+  color: #BF001C;
+}
+.ui-form__bottom {
+  padding-top: 0.16rem;
+  padding-bottom: 0.08rem;
+}
+.ui-form__bottom .ui-form__item {
+  padding-top: 0.34rem;
+  padding-left: 0.3rem;
+  padding-right: 0.4rem;
+  padding-bottom: 0;
+}
+.ui-form__bottom .ui-item__label {
+  width: 1.5rem;
+  line-height: 1.5;
+}
+.ui-form__bottom textarea,
+.ui-form__bottom input {
+  background-color: #D2D3D3;
+}
+.ui-form__bottom input {
+  height: 0.56rem;
+}
+.ui-form__bottom textarea {
+  height: 2.28rem;
+}
+.ui-form__bottom .ui-item__img {
+  text-align: right;
+}
+.ui-form__bottom .ui-item__img img {
+  float: right;
+  width: 0.56rem;
+  height: 0.44rem;
+}
+.ui-imgList {
+  width: 100%;
+  margin-top: 0.66rem;
+}
+/*.ui-imgList__item {
+  width: 1rem;
+  height: 0.8rem;
+  margin-right: 0.1rem;
+  margin-bottom: 0.1rem;
+  float: left;
+}*/
+.ui-dropdown__items {
+  z-index: 2;
+  width: 100%;
+  position: absolute;
+  top: 0.56rem;
+  left: 0;
+}
+.ui-dropdown__items .current {
+  background-color: #D2D3D3;
+  color: #000;
+}
+.ui-form__dropdown {
+  padding-left: 0.1rem;
+}
+.ui-dropdown__item {
+  font-size: 0.15rem;
+  height: 0.4rem;
+  padding-left: 0.2rem;
+  line-height: 0.4rem;
+  background-color: #999998;
+}
+.ui-item__select {
+  width: 100%;
+  height: 0.56rem;
+  line-height: 0.56rem;
+  background-color: #D2D3D3;
+  color: #5B5B5B;
+}
+.ui-submit {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 1.42rem;
+  line-height: 1.42rem;
+  background-color: #BF001C;
+  font-size: 0.27rem;
+  color: #fff;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+}
+.ui-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 1.2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+.ui-confirm {
+  background: #f5f5f5;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  width: 100%;
+  color: #221815;
+  font-size: 0.3rem;
+}
+.ui-confirm__content {
+  padding: 0.35rem 1rem 0.42rem;
+  border: 1px solid #CFCFCF;
+  text-align: center;
+  line-height: 0.48rem;
+}
+.ui-confirm__buttons {
+  position: relative;
+  padding: 0.1rem 0;
+  height: 0.7rem;
+  line-height: 0.5rem;
+}
+.ui-confirm__button {
+  text-align: center;
+  width: 100%;
+  color: #221815;
+}
+.img-wrapper{
+  display: flex;
+  flex-wrap:wrap;
+
+  height: 1.2rem;
+}
+.img{
+  margin: .1rem;
+  width: 1rem!important;
+  height: 1rem!important;
+}
+.img img{
+  width: 100%!important;
+  height: 100%!important;
+}

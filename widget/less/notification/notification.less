@@ -1,0 +1,53 @@
+@import "../base/_config";
+
+@font-weight:400;
+@font-size:.30rem;
+
+//展示项
+.ui-item {
+    height: 2rem;
+    margin: 0 .07rem .44rem .07rem;
+}
+.ui-item .ui-item_date{
+    position: relative;
+    // height: 50%;
+    height: 1.11rem;
+    width: 100%;
+    padding: 0 .5rem;
+    background-color: #999999;
+}
+.ui-item .ui-item_content{
+    position: relative;
+    height: 1.11rem;
+    width: 100%;
+    padding: 0 .5rem;
+    background-color: #d3d3d4;
+    font-size: @font-size;
+}
+.ui-item_content span{
+    position: absolute;
+    left: .33rem;
+    width: 95%;
+    line-height: 1.11rem;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-weight: @font-weight;
+}
+.ui-item_date .ui-item_icon{
+    position: absolute;
+    left: .33rem;
+    top: .34rem;
+    width: .39rem;
+    height: .39rem;
+    background: url(../../image/notification/calender.png) no-repeat;
+    background-size: contain;
+}
+.ui-item_date .ui-item_time{
+    position: absolute;
+    left: .94rem;
+    line-height: 1.11rem;
+    font-size: @font-size;
+    font-weight: @font-weight;
+    color: #ffffff;
+}

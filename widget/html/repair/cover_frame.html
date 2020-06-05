@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>linde</title>
+    <!--<title>scan view</title>-->
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/repair/scan.css">
+    <!-- <link rel="stylesheet" href="../../css/baseWin/index.css"> -->
+    <script src="../../script/utils/response.js"></script>
+</head>
+
+<body>
+    <div id="header" class="ui-header is-base">
+        <!-- <div id="leftBtn" class="ui-header__leftBtn" tapmode="active">
+            <i id="leftIcon" class="iconfont is-left"></i>
+        </div> -->
+        <div id="title" class="ui-header__title move"></div>
+        <div id="rightBtn" class="ui-header__rightBtn" tapmode="active" onclick="onCloseTap()">
+            <i id="rightIcon" class="iconfont is-right"></i>
+        </div>
+    </div>
+    <div id="main"></div>
+    <script>
+        var _g = {
+            isAndroid: (/android/gi).test(navigator.appVersion),
+            uzStorage: function () {
+                var ls = window.localStorage;
+                if (this.isAndroid && !window.location.host) ls = os.localStorage();
+                return ls;
+            },
+            setLS: function (key, value) {
+                if (arguments.length === 2) {
+                    var v = value;
+                    if (typeof v == 'object') {
+                        v = JSON.stringify(v);
+                        v = 'obj-' + v;
+                    } else {
+                        v = 'str-' + v;
+                    }
+                    var ls = this.uzStorage();
+                    if (ls) {
+                        ls.setItem(key, v);
+                    }
+                }
+            },
+            getLS: function (key) {
+                var ls = this.uzStorage();
+                if (ls) {
+                    var v = ls.getItem(key);
+                    if (!v) {
+                        return;
+                    }
+                    if (v.indexOf('obj-') === 0) {
+                        v = v.slice(4);
+                        return JSON.parse(v);
+                    } else if (v.indexOf('str-') === 0) {
+                        return v.slice(4);
+                    }
+                }
+            },
+            rmLS: function (key) {
+                var ls = this.uzStorage();
+                if (ls && key) ls.removeItem(key);
+            },
+            clearLS: function () {
+                var ls = this.uzStorage();
+                if (ls) ls.clear();
+            },
+        };
+        var _header = document.getElementById('header');
+        var _title = document.getElementById('title');
+        _header.style.paddingTop = _g.getLS('StatusBarHeight') + 'px';
+        // 动画效果设置
+        // setTimeout(function () {
+        //     _header.style.opacity = 1;
+        //     if ((/android/gi).test(navigator.appVersion)) {
+        //         _title.style.webkitTransform = 'translate3d(0,0,0)';
+        //     } else {
+        //         _title.classList.add('move');
+        //     }
+        // }, 20);
+    </script>
+    <script src="../../script/base.js"></script>
+    <script src="../../script/global.js" data-path="M/repair/cover" id="entry"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+<div class="ui-main">
+    <div class="ui-search">
+        <div class="ui-search_icon" v-hammer:tap="text"></div>
+        <input type="text" v-model="search" :placeholder="LANGUAGE.search">
+    </div>
+    <div class="ui-list">
+        <div class="ui-item" v-for="(item, index) in tableList" :key="index" v-hammer:tap="onDetailTap">
+            <div class="space-between"><span>Order No</span><span>{{item.no}}</span></div>
+            <div class="space-between"><span>Task No</span><span>{{item.no}}</span></div>
+            <div class="space-between noneborder"><span>Serial No</span><span>{{item.sn}}</span></div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,162 @@
+@import "../base/_config";
+@font-weight:400;
+@font-size:.30rem;
+
+html,body {
+    background-color: transparent;
+}
+
+.ui-title {
+    position: absolute;
+    top: 1.95rem;
+    width: 100%;
+    // left: .87rem;
+    font-size: .33rem;
+    color: #231815;
+    text-align: center;
+}
+.ui-scanIcon {
+    position: absolute;
+    top: 3.37rem;
+    left: .82rem;
+    height: 5.86rem;
+    width: 5.86rem;
+    background: url(../../image/repair/scan__big.png) no-repeat;
+    background-size: contain;
+}
+
+// .ui-header {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 1rem;
+//     background-color: #C1001C;
+// }
+
+// .ui-header__title {
+//     font-size: .3rem;
+//     font-weight: bold;
+//     text-align: center;
+//     color: #fff;
+// }
+
+#header {
+    box-sizing: content-box;
+    z-index: 999;
+}
+
+.ui-header {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #C1001C;
+    box-sizing: content-box;
+    z-index: 999;
+    // opacity: 0.2;
+    transition: opacity 0.4s;
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+        transform: scale(1, 0.5);
+        transform-origin: center center;
+    }
+    .active {
+        opacity: 0.3;
+    }
+}
+
+.ui-header__leftBtn,
+.ui-header__rightBtn {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: auto;
+    min-width: 44px;
+    max-width: 44px * 2;
+    height: 44px;
+    text-align: center;
+    font-size: 0;
+    z-index: 9;
+    @include ellipsis;
+    &:active {
+        opacity: 0.3;
+    }
+    &>i,
+    &>span {
+        display: inline-block;
+        font-size: 0.32rem;
+        color: @mainFontColor;
+        vertical-align: middle;
+    }
+    &>i {
+        font-size: 0.44rem;
+    }
+    .is-empty {
+        // width: 0;
+        // height: 0;
+        // background-color: #000;
+    }
+    .is-left {
+        position: absolute;
+        left: 0;
+        bottom: 6px;
+        width: 44px;
+        height: 40px;
+        background-image: url(../../image/baseWin/icon-menu.png);
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+        background-position: 8px bottom;
+    }
+    .is-right {
+        position: absolute;
+        right: 9px;
+        bottom: 8px;
+        width: 44px;
+        height: 44px;
+        background-image: url(../../image/baseWin/icon-back.png);
+        background-size: 28px 20px;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+    }
+}
+
+.ui-header__rightBtn {
+    right: 0;
+    &>span {
+        font-size: 12px;
+        color: @mainColor;
+        font-weight: normal;
+        font-family: PingFangSC-Regular;
+    }
+}
+
+.ui-header__title {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 80px;
+    font-size: 16px;
+    font-weight: bold;
+    @include ellipsis;
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    // transition: transform 0.4s;
+    &.move {
+        animation: rightToLeft 0.2s 0s ease-in-out forwards;
+    }
+}

@@ -1,0 +1,200 @@
+<div class="ui-main">
+    <div class="ui-menu">
+      <div :class="{'checked':menuchecked}" class="menu" v-hammer:tap="changestatus">
+        Truck Information
+      </div>
+      <div :class="{'checked':!menuchecked}" class="menu" v-hammer:tap="changeRepair">
+        Service History
+      </div>
+    </div>
+    <div class="status" v-show="menuchecked">
+      <!-- <div class="status-lines" v-for="(item,key,index) in status" :key="index"
+      :class="{'border': key=='Customer：' || key=='TASK NO.  ：' || key=='Fleet number:  ' || key=='Side Shift：' || key=='Battery Spec: ' || key=='Rental Period:' || key=='Warranty Battery: ' || key=='Warranty : Others:' || key=='Payment Terms: '}">
+        <span class="lines-title">{{key}}</span>
+        <span class="lines-content">{{item}}</span>
+      </div> -->
+      <div class="status-lines firline">
+        <div class="small-border">
+          <span class="lines-title">Company name</span>
+          <span class="lines-content">{{status.userName}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines border">
+        <div class="small-border">
+          <span class="lines-title">Customer</span>
+          <span class="lines-content">{{status.customerName}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines">
+        <div class="small-border">
+          <span class="lines-title">Tel</span>
+          <span class="lines-content">{{status.phone}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines border">
+        <div class="small-border">
+          <span class="lines-title">Salesman</span>
+          <span class="lines-content">{{status.salesman}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines">
+        <div class="small-border">
+          <span class="lines-title">Serlal No</span>
+          <span class="lines-content">{{status.serialNo || '--'}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines">
+        <div class="small-border">
+          <span class="lines-title">Model</span>
+          <span class="lines-content">{{status.model}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines border">
+        <div class="small-border">
+          <span class="lines-title">Fleet number</span>
+          <span class="lines-content">{{status.fleet}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines">
+        <div class="small-border">
+          <span class="lines-title">Mast Spec</span>
+          <span class="lines-content">{{status.mastSpec}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines">
+        <div class="small-border">
+          <span class="lines-title">Fork Size</span>
+          <span class="lines-content">{{status.forkSize}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines border">
+        <div class="small-border ">
+          <span class="lines-title">Side Shift</span>
+          <span class="lines-content">{{status.sideShift}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines">
+        <div class="small-border">
+          <span class="lines-title">Special Spec</span>
+          <span class="lines-content">{{status.specLabEct}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines">
+        <div class="small-border">
+          <span class="lines-title">Attachment</span>
+          <span class="lines-content">{{status.attachDoubledeepEct}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines border">
+        <div class="small-border">
+          <span class="lines-title">Battery Spec</span>
+          <span class="lines-content">{{status.batterySpec}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines">
+        <div class="small-border">
+          <span class="lines-title">Delivery Schedule</span>
+          <span class="lines-content">{{status.deliverySchedule}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines border">
+        <div class="small-border">
+          <span class="lines-title">Rental Period</span>
+          <span class="lines-content">{{status.rentalPeriod}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines">
+        <div class="small-border">
+          <span class="lines-title">Rental Period  &nbsp;&nbsp;(Start Date)</span>
+          <span class="lines-content">{{status.rentalPeriodStart}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines border">
+        <div class="small-border">
+          <span class="lines-title">Rental Period &nbsp;&nbsp;(End Date)</span>
+          <span class="lines-content">{{status.rentalPeriodEnd}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines border">
+        <div class="small-border">
+          <span class="lines-title">Warranty Battery</span>
+          <span class="lines-content">{{status.warrantyBattery}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines">
+        <div class="small-border">
+          <span class="lines-title">Warranty Charger</span>
+          <span class="lines-content">{{status.warrantyCharger}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines">
+        <div class="small-border">
+          <span class="lines-title">Warranty:Tyres</span>
+          <span class="lines-content">{{status.warrantyTyres}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines border">
+        <div class="small-border">
+          <span class="lines-title">Warranty:Others</span>
+          <span class="lines-content">{{status.warrantyOthers}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines">
+        <div class="small-border">
+          <span class="lines-title">PMYear</span>
+          <span class="lines-content">{{status.pmYear}}</span>
+        </div>
+      </div>
+
+      <div class="status-lines">
+        <div class="small-border">
+          <span class="lines-title">Payment Terms</span>
+          <span class="lines-content">{{status.paymentTerms}}</span>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="ui-scroll" v-show="!menuchecked">
+        <div class="ui-table">
+            <div class="ui-list is-thead" v-hammer:tap="onDetailTap">
+                <div class="ui-item" v-for="(item, index) in tableHead" :key="index">
+                    <div class="ui-item__cell is-date">{{item.dateTab}}</div>
+                    <div class="ui-item__cell is-job">{{item.jobTab}}</div>
+                    <div class="ui-item__cell is-status">{{item.statusTab}}</div>
+                    <div class="ui-item__cell is-msg">{{item.documentTab}}</div>
+                </div>
+            </div>
+            <div class="ui-list">
+                <div class="ui-item" v-for="(item, index) in tableList" :key="index">
+                    <div class="ui-item__cell is-date">{{item.workDate || "#"}}</div>
+                    <div class="ui-item__cell is-job">{{item.reasonQuotation}}</div>
+                    <div class="ui-item__cell is-status">{{item.result}}</div>
+                    <div class="ui-item__cell is-msg">{{item.followOrder}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

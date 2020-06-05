@@ -1,0 +1,73 @@
+<div class="ui-main">
+    <div class="ui-menus">
+        <div class="ui-menus__items clearfix">
+            <div class="ui-menus__item">
+                <div class="ui-menus__warp" v-hammer:tap="onEnterLogoTap">
+                    <!--                    <div class="ui-menus__title">Linde Material Handling</div>-->
+                    <!--                    <div class="ui-menus__icon">-->
+                    <!--                        <div class="ui-menus__img"></div>-->
+                    <!--                    </div>-->
+                </div>
+            </div>
+            <div class="ui-menus__item" v-for="(item,index) in menus" :key="index">
+                <div class="ui-menus__warp" v-hammer:tap="()=>onEnterMenuTap(item)">
+                    <div class="ui-menus__icon">
+                        <div class="ui-menus__img" :style="{'background-image': 'url('+ item.img +')'}"></div>
+                    </div>
+                    <div class="ui-menus__title">{{item.title}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex;">
+        <div class="ui-account" style="font-size: .3rem;padding-top: .2rem; margin-right: .3rem;" v-hammer:tap="onEnterLoginTap">
+            登录注册
+        </div>
+        <div class="ui-account" style="font-size: .3rem;padding-top: .2rem; margin-right: .3rem;" v-hammer:tap="onSalesTap">
+            切换师傅
+        </div>
+        <div class="ui-account" style="font-size: .3rem;padding-top: .2rem; margin-right: .3rem;" v-hammer:tap="onUserTap">
+            切换用户
+        </div>
+    </div>
+    <div class="message-wrapper" v-show="false">
+      <div class="message-bac">
+      </div>
+      <div class="message-contet">
+        <div class="content-info">
+          <div class="ui-form__item ui-form__code" style="margin-bottom:.6rem;">
+              <input type="text" :placeholder="lang.account_company_email_placeholder" v-model="email"/>
+          </div>
+          <div class="ui-form__item ui-form__code">
+              <input type="text" :placeholder="lang.account_code_placeholder" :value="code"/>
+              <div class="ui-form__getCode" v-hammer:tap="getCode" v-show="!isGetCode">
+                <!--  v-hammer:tap="getCode"-->
+                  {{lang.account_get_code_title}}
+              </div>
+              <div class="ui-form__getCode ui_disabled" v-show="isGetCode">{{time}}</div>
+          </div>
+        </div>
+        <div class="button-group">
+            <span>OK</span>
+        </div>
+      </div>
+    </div>
+    <div class="ui-swiper">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div v-hammer:tap="()=>onEnterSwiperTap(item.newsId)" class="swiper-slide" v-for="(item,index) in swiperList"
+                     :key="index" :style="{'background-image': 'url('+'http://39.99.222.188:8888'+ item.img +')'}" v-show="item.pictureUrl != ''"></div>
+            </div>
+        </div>
+    </div>
+    <div class="ui-modal" v-show="showModal">
+        <div class="ui-confirm">
+            <div class="ui-confirm__content">{{lang.home_no_auth_content}}</div>
+            <div class="ui-confirm__buttons">
+                <div class="ui-confirm__button"><span v-hammer:tap="onEnterLoginTap">{{lang.home_login}}</span></div>
+                <div class="ui-confirm__button ui-confirm__disabled" v-hammer:tap="onCloseMaskTap"><span>{{lang.home_cancels}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

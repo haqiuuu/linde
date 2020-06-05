@@ -1,0 +1,69 @@
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+.ui-search {
+  position: relative;
+  height: 0.91rem;
+  margin-bottom: 0.9rem;
+  padding: 0 0.32rem;
+  background-color: #d3d4d4;
+  overflow: hidden;
+}
+.ui-search__icon {
+  position: absolute;
+  left: 0.39rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 0.4rem;
+  width: 0.4rem;
+  background: url(../../image/myFleet/search.png) no-repeat;
+  background-size: contain;
+}
+.ui-search input {
+  position: absolute;
+  left: 0.99rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  outline: none;
+  font-size: 0.3rem;
+  font-weight: normal;
+  color: #8c8d8d;
+  background-color: #d3d4d4;
+}
+.ui-content {
+  position: relative;
+  /*width: 7.5rem;*/
+  height: 2.7rem;
+  line-height: 0.9rem;
+
+  font-size: 0.3rem;
+  color: #202020;
+  /*background-color: #d3d4d4;*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: .1rem;
+}
+.content-wrapper{
+  display: flex;
+  background-color: #d3d4d4;
+  margin-bottom: .02rem;
+  padding-left: 0.66rem;
+  padding-right: 0.26rem;
+}
+.content-wrapper span{
+  width:50%;
+}

@@ -1,0 +1,72 @@
+.ui-content{
+  background-color: #F5F3F3;
+  margin: .07rem;
+  min-height: 12rem;
+}
+.ui-header{
+  position: relative;
+  height: 0.91rem;
+  width: 100%;
+  padding: 0 0.5rem;
+  background-color: #999999;
+  font-weight: 400;
+  font-size: 0.4rem;
+  color: #F0F0F0;
+  line-height: 0.91rem;
+  text-align: center;
+
+}
+.content-end{
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.4rem 0.35rem 0 0.35rem;
+  text-align: center;
+  font-size: 0.3rem;
+  font-weight: 400;
+  color: #221815;
+}
+.content-end .end-name{
+  font-weight: 400;
+}
+.content-end .end-time{
+  font-size: 0.2rem;
+  color: #85888C;
+}
+
+.content-title{
+  font-size: 0.45rem;
+  color: #221815;
+  padding: 0.45rem 0.35rem;
+}
+.content-title span{
+  font-weight: 500;
+}
+
+.content-content{
+  width: 100%;
+  height:auto;
+  padding: 0.6rem 0.35rem;
+  font-size: 0.3rem;
+  color: #221815;
+}
+.content-content span{
+  font-weight: 500;
+  width:100%;
+  height:auto;
+  word-break:break-all;
+  white-space: normal;
+}
+.content-btn{
+  width: 100%;
+  text-align: center;
+}
+.content-btn button{
+
+  font-size: 0.35rem;
+  padding: .2rem .7rem;
+  outline: none;
+  border: 0px solid black;
+  background-color: #5393ff;
+  color: #fff;
+  border-radius: .15rem;
+}

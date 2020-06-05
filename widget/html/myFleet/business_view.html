@@ -1,0 +1,9 @@
+<div class="ui-main">
+  <div class="business-name">
+    {{businessName}}
+  </div>
+  <div class="business-list" v-for="(item,index) in businessList" :key="index"  v-hammer:tap="()=>onDetailTap(item)">
+    <span>Truck S/N#: </span>
+    <span class="span2">{{item}}</span>
+  </div>
+</div>

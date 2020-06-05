@@ -1,0 +1,15 @@
+.ui-footer {
+    height: 2.13rem;
+    line-height: 2.13rem;
+    width: 100%;
+    background-color: #BF001D;
+    padding-right: .13rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ui-footer .ui-footer__icon {
+    margin-right: .4rem;
+    width: .63rem;
+    height: .63rem;
+}

@@ -1,0 +1,271 @@
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+.ui-main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #F5F2F5;
+}
+.ui-main > div {
+  height: 1.12rem;
+  margin: 0.06rem 0.07rem 0 0.07rem;
+  background-color: #ffffff;
+}
+.ui-main > div:nth-last-child(1) {
+  box-shadow: 0 0.08rem 0 0 #EAE8EB;
+}
+.ui-username {
+  position: relative;
+}
+.ui-username .ui-username_icon {
+  position: absolute;
+  left: 0.27rem;
+  top: 0.37rem;
+  width: 0.37rem;
+  height: 0.37rem;
+  background: url(../../image/setting/name.png) no-repeat;
+  background-size: contain;
+}
+.ui-username span {
+  position: absolute;
+  left: 0.94rem;
+  line-height: 1.12rem;
+  font-size: 0.3rem;
+  font-weight: 400;
+  color: #221815;
+}
+.ui-username .ui-username_name {
+  position: absolute;
+  right: 0.35rem;
+  line-height: 1.12rem;
+  font-size: 0.3rem;
+  font-weight: 400;
+  color: #85888C;
+}
+.ui-phone {
+  position: relative;
+}
+.ui-phone .ui-phone_icon {
+  position: absolute;
+  left: 0.27rem;
+  top: 0.37rem;
+  width: 0.37rem;
+  height: 0.37rem;
+  background: url(../../image/setting/phone.png) no-repeat;
+  background-size: contain;
+}
+.ui-phone span {
+  position: absolute;
+  left: 0.94rem;
+  line-height: 1.12rem;
+  font-size: 0.3rem;
+  font-weight: 400;
+  color: #221815;
+}
+.ui-phone .ui-phone_number {
+  position: absolute;
+  right: 0.35rem;
+  line-height: 1.12rem;
+  font-size: 0.3rem;
+  font-weight: 400;
+  color: #85888C;
+}
+.ui-mailbox {
+  position: relative;
+}
+.ui-mailbox .ui-mailbox_icon {
+  position: absolute;
+  left: 0.27rem;
+  top: 0.37rem;
+  width: 0.37rem;
+  height: 0.37rem;
+  background: url(../../image/setting/mailbox.png) no-repeat;
+  background-size: contain;
+}
+.ui-mailbox span {
+  position: absolute;
+  left: 0.94rem;
+  line-height: 1.12rem;
+  font-size: 0.3rem;
+  font-weight: 400;
+  color: #221815;
+}
+.ui-mailbox .ui-mailbox_account {
+  position: absolute;
+  right: 0.35rem;
+  line-height: 1.12rem;
+  font-size: 0.3rem;
+  font-weight: 400;
+  color: #85888C;
+}
+.ui-setCode {
+  position: relative;
+}
+.ui-setCode .ui-setCode_icon {
+  position: absolute;
+  left: 0.27rem;
+  top: 0.37rem;
+  width: 0.37rem;
+  height: 0.37rem;
+  background: url(../../image/setting/code.png) no-repeat;
+  background-size: contain;
+}
+.ui-setCode span {
+  position: absolute;
+  left: 0.94rem;
+  line-height: 1.12rem;
+  font-size: 0.3rem;
+  font-weight: 400;
+  color: #221815;
+}
+.ui-setCode .ui-mailbox_account {
+  position: absolute;
+  right: 0.35rem;
+  line-height: 1.12rem;
+  font-size: 0.3rem;
+  font-weight: 400;
+  color: #85888C;
+}
+.ui-setTruck {
+  position: relative;
+}
+.ui-setTruck .ui-setTruck_icon {
+  position: absolute;
+  left: 0.27rem;
+  top: 0.37rem;
+  width: 0.37rem;
+  height: 0.37rem;
+  background: url(../../image/setting/truck.png) no-repeat;
+  background-size: contain;
+}
+.ui-setTruck span {
+  position: absolute;
+  left: 0.94rem;
+  line-height: 1.12rem;
+  font-size: 0.3rem;
+  font-weight: 400;
+  color: #221815;
+}
+.ui-setTruck .ui-mailbox_account {
+  position: absolute;
+  right: 0.35rem;
+  line-height: 1.12rem;
+  font-size: 0.3rem;
+  font-weight: 400;
+  color: #85888C;
+}
+.ui-resetPassword {
+  position: relative;
+}
+.ui-resetPassword .ui-resetPassword_icon {
+  position: absolute;
+  left: 0.27rem;
+  top: 0.37rem;
+  width: 0.37rem;
+  height: 0.37rem;
+  background: url(../../image/setting/password.png) no-repeat;
+  background-size: contain;
+}
+.ui-resetPassword span {
+  position: absolute;
+  left: 0.94rem;
+  line-height: 1.12rem;
+  font-size: 0.3rem;
+  font-weight: 400;
+  color: #221815;
+}
+
+
+.message-wrapper{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.message-bac{
+  background-color: #000;
+  opacity: .5;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0
+}
+.message-contet{
+  width: 100%;
+  position: absolute;
+  font-size: .33rem;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  height: 3.5rem;
+  width: 5.1rem;
+  border-radius: .2rem;
+  background-color: #F5F5F5;
+  z-index: 2;
+  padding: .36rem .53rem 0 .53rem;
+}
+
+.message-contet2{
+  width: 100%;
+  position: absolute;
+  font-size: .33rem;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  height: 5.5rem;
+  width: 5.1rem;
+  border-radius: .2rem;
+  background-color: #F5F5F5;
+  z-index: 2;
+  padding: .36rem .53rem 0 .53rem;
+}
+.message-contet span{
+  font-weight: 500;
+}
+.content-header{
+  text-align: center;
+}
+.content-input input{
+  border: none;
+  background-color:transparent;
+  border-bottom: 1px solid #999;
+  width: 4rem;
+  margin: .6rem 0 0 0;
+  padding: 0 0 .08rem .04rem;
+  font-size: .26rem;
+  font-weight: 400;
+}
+.button-group{
+  width:5.1rem;
+  height: .78rem;
+  border-top: 1px solid #BFBFBF;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 .7rem;
+}
+.button-group span{
+  line-height: .78rem;
+  text-align: center;
+}
+.button-split span{
+  font-size: .6rem;
+  font-weight: 200;
+  color: #BFBFBF;
+}

@@ -1,0 +1,22 @@
+<div class="ui-main">
+    <div class="ui-title">{{title}}</div>
+    <div class="ui-content">
+        <input type="text" v-model='value'>
+        <div class="ui-scanIcon" v-hammer:tap="onScanTap"></div>
+    </div>
+    <button v-hammer:tap="onform">{{buttonName}}</button>
+
+    <!--弹窗-->
+    <div class="message-wrapper" v-show="showMessage">
+      <div class="message-bac">
+      </div>
+      <div class="message-contet">
+        <div class="content-info">
+          <span> Please Enter/Scan Truck S/N Belonged to you</span>
+        </div>
+        <div class="button-group">
+            <span>OK</span>
+        </div>
+      </div>
+    </div>
+</div>

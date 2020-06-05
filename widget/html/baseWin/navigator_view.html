@@ -1,0 +1,9 @@
+<div class="ui-main">
+	<div class="ui-bg" v-hammer:tap="onHideTap"></div>
+	<div class="ui-nav__list">
+		<div class="ui-nav__item" v-for="(item, index) in list" v-hammer:tap="(()=>onItemTap(index))" :key="index">
+			<div class="ui-nav__icon" :style="{'background-image': 'url('+ item.icon +')'}"></div>
+			<div class="ui-nav__title">{{item.title}}</div>
+		</div>
+	</div>
+</div>

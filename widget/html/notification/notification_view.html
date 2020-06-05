@@ -1,0 +1,13 @@
+<div class="ui-main">
+    <div class="title bac">
+      <span>Date</span>
+      <span>Subject</span>
+    </div>
+
+    <div class="content" v-for="(item,index) in getList" :key="index" :class="{bac:(index%2 !=0) &&  index!=0}" v-hammer:tap="()=>onDetailTap(item)">
+      <div class="tip" v-if="item.ifRead==0">
+      </div>
+      <span>{{item.createTime.slice(0,10)}}</span>
+      <span>{{item.taskTitle}}</span>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+.ui-header{
+  background-color: #999999;
+  margin: 0.07rem;
+  line-height: 0.62rem;
+  height: 0.62rem;
+  color: #f0f0f0;
+  font-size: .32rem;
+  text-align: center;
+  font-weight: 500;
+}
+.ui-content{
+  color: #221815;
+  font-size: .32rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.content-wrapper{
+  background-color: #f3f3f3;
+  margin: .07rem;
+  padding: 0.37rem .29rem .47rem .41rem;
+  min-height: 12rem;
+}

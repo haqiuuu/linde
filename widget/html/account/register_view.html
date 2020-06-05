@@ -1,0 +1,94 @@
+<div class="ui-main" v-hammer:tap="onCloseDropDownTap">
+    <div class="ui-main__container clearfix">
+        <div class="ui-main__title">{{language.account_register_title}}</div>
+        <div class="ui-form clearfix">
+          <div class="ui-form__item ui-form__username">
+              <input @blur="dataValidation('account')" type="text"
+                     :placeholder="language.account_account_placeholder"
+                     @input="onChangeValueInput($event,'account')" :value="form.account"/>
+          </div>
+          <div class="ui-form__tips">
+              <span v-show="tips.account">{{tips.account}}</span>
+          </div>
+
+            <div class="ui-form__item ui-form__username">
+                <input @blur="dataValidation('username')" type="text"
+                       :placeholder="language.account_user_name_placeholder"
+                       @input="onChangeValueInput($event,'username')" :value="form.username"/>
+            </div>
+            <div class="ui-form__tips">
+                <span v-show="tips.username">{{tips.username}}</span>
+            </div>
+
+            <div class="ui-form__item ui-form__phone">
+                <div class="ui-form__dropdown" v-hammer:tap="changePhoneDropDown">
+                    <span class="ui-dropdown__title">{{form.phonePrefix ? '+' + form.phonePrefix : ''}}</span>
+                    <div class="ui-dropdown__icon"></div>
+                </div>
+                <div class="ui-dropdown__items" v-show="showPhoneDropdown">
+                    <div v-hammer:tap="function(e){onChangePrefixTap(item);}" v-for="(item,index) in phonePrefixData"
+                         :key="index" :class="item.value == form.phonePrefix ? 'current' : null"
+                         class="ui-dropdown__item">{{item.label}}
+                    </div>
+                </div>
+                <input  @blur="dataValidation('phone')" type="text" :placeholder="language.account_telephone_placeholder"
+                       @input="onChangeValueInput($event,'phone')" :value="form.phone"/>
+            </div>
+            <div class="ui-form__tips">
+                <span v-show="tips.phone">{{tips.phone}}</span>
+            </div>
+            <div class="ui-form__item ui-form__email">
+                <input @blur="dataValidation('email')" type="text"
+                       :placeholder="language.account_company_email_placeholder"
+                       @input="onChangeValueInput($event,'email')" :value="form.email"/>
+            </div>
+            <div class="ui-form__tips">
+                <span v-show="tips.email">{{tips.email}}</span>
+            </div>
+            <div class="ui-form__item ui-form__code">
+                <input @blur="dataValidation('code')" type="text" :placeholder="language.account_code_placeholder"
+                       @input="onChangeValueInput($event,'code')" :value="form.code"/>
+                <div class="ui-form__getCode" v-hammer:tap="getCode" v-show="!isGetCode">
+                    {{language.account_get_code_title}}
+                </div>
+                <div class="ui-form__getCode ui_disabled" v-show="isGetCode">{{time}}</div>
+            </div>
+            <div class="ui-form__tips">
+                <span v-show="tips.code">{{tips.code}}</span>
+            </div>
+            <div class="ui-form__item ui-form__password">
+                <input @blur="dataValidation('password')" type="password"
+                       :placeholder="language.account_new_password_placeholder"
+                       @input="onChangeValueInput($event,'password')" :value="form.password"/>
+            </div>
+            <div class="ui-form__tips">
+                <span v-show="tips.password">{{tips.password}}</span>
+            </div>
+            <div class="ui-form__item ui-form__confirmPassword">
+                <input @blur="dataValidation('confirmPassword')" type="password"
+                       :placeholder="language.account_password_again_placeholder"
+                       @input="onChangeValueInput($event,'confirmPassword')" :value="form.confirmPassword"/>
+            </div>
+            <div class="ui-form__tips">
+                <span v-show="tips.confirmPassword">{{tips.confirmPassword}}</span>
+            </div>
+            <div class="ui-form__item ui-form__customerCode">
+                <input @blur="dataValidation('customerCode')" type="text"
+                       :placeholder="language.account_customer_code_placeholder"
+                       @input="onChangeValueInput($event,'customerCode')" :value="form.customerCode"/>
+            </div>
+            <div class="ui-form__tips">
+                <span v-show="tips.customerCode">{{tips.customerCode}}</span>
+            </div>
+            <div class="ui-form__item ui-form__truckSN">
+                <input @blur="dataValidation('truckSN')" type="text" :placeholder="language.account_truckSN_placeholder"
+                       @input="onChangeValueInput($event,'truckSN')" :value="form.truckSN"/>
+                <div class="ui-form__scan" v-hammer:tap="onScanTap"></div>
+            </div>
+            <div class="ui-form__tips">
+                <span v-show="tips.truckSN || globalTips">{{tips.truckSN || globalTips}}</span>
+            </div>
+            <div class="ui-submit fr" v-hammer:tap="onSubmitTap">{{language.account_submit_btn}}</div>
+        </div>
+    </div>
+</div>

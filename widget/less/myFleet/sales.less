@@ -1,0 +1,159 @@
+@import "../base/_config";
+
+//
+@font-weight:400;
+@font-size:.30rem;
+.ui-main{
+    position: relative;
+}
+//搜索框
+.ui-search {
+    position: relative;
+    height: .91rem;
+    margin-bottom: .55rem;
+    padding: 0 .32rem;
+    background-color: #d3d4d4;
+    overflow: hidden;
+}
+.ui-search .ui-search_icon{
+    position: absolute;
+    left: .39rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: .4rem;
+    width: .4rem;
+    background: url(../../image/myFleet/search.png) no-repeat;
+    background-size: contain;
+
+}
+.ui-search input{
+    position: absolute;
+    left: .99rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    outline: none;
+    font-size: @font-size;
+    font-weight: @font-weight;
+    color: #8c8d8d;
+    background-color: #d3d4d4;
+}
+.ui-search span{
+    position: absolute;
+    right: .91rem;
+    line-height: .91rem;
+    font-size: @font-size;
+    font-weight: @font-weight;
+    color: #BF001D;
+}
+//收起图标
+.ui-triangleTop{
+    position: absolute;
+    right: .30rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: .25rem;
+    height: .19rem;
+    background: url(../../image/myFleet/triangleTop.png) no-repeat;
+    background-size: contain;
+}
+.ui-triangleDown{
+    position: absolute;
+    right: .30rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: .25rem;
+    height: .19rem;
+    background: url(../../image/myFleet/triangleDown.png) no-repeat;
+    background-size: contain;
+}
+
+//展示项
+.ui-item {
+    height: 2rem;
+    margin: 0 .11rem .54rem .11rem;
+}
+//truck
+.ui-item .ui-item_truck{
+    position: relative;
+    height: 1.11rem;
+    width: 100%;
+    padding: 0 .5rem;
+    background-color: #999999;
+}
+.ui-item_truck .ui-item_icon{
+    position: absolute;
+    left: .33rem;
+    top: .4rem;
+    width: .39rem;
+    height: .39rem;
+    background: url(../../image/myFleet/truck.png) no-repeat;
+    background-size: contain;
+}
+.ui-item_truck .ui-item_TruckId{
+    position: absolute;
+    left: .94rem;
+    width: 87%;
+    line-height: 1.11rem;
+    font-size: @font-size;
+    font-weight: @font-weight;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    color: #ffffff;
+}
+
+//company
+.ui-item .ui-item_company{
+    position: relative;
+    height: 1.11rem;
+    width: 100%;
+    padding: 0 .5rem;
+    background-color: #d3d3d4;
+}
+.ui-item_company .ui-item_icon{
+    position: absolute;
+    left: .33rem;
+    top: .4rem;
+    width: .39rem;
+    height: .39rem;
+    background: url(../../image/myFleet/company.png) no-repeat;
+    background-size: contain;
+}
+.ui-item_company .ui-item_name{
+    position: absolute;
+    left: .94rem;
+    width: 87%;
+    line-height: 1.11rem;
+    font-size: @font-size;
+    font-weight: @font-weight;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    color: #666666;
+}
+
+// 下拉菜单
+.ui-menu{
+    //display: none;
+    position: absolute;
+    top: .91rem;
+    right: .11rem;
+}
+.ui-menu li{
+    width: 2.53rem;
+    height: .89rem;
+    line-height: .89rem;
+    border-bottom: 1px solid #ccc;
+    background-color: #ffffff;
+    text-align: center;
+    font-size: @font-size;
+    font-weight: @font-weight;
+    color: #807E7E;
+}
+.current{
+    color: #BF001D!important;
+}
+.uncurrent {
+    color: #807E7E!important;
+}

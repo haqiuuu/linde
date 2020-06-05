@@ -1,0 +1,23 @@
+.business-name{
+  text-align: center;
+  height: .8rem;
+  background-color: #d3d4d4;
+  font-size: .28rem;
+  line-height: .8rem;
+  font-weight: 400;
+}
+
+.business-list{
+  display: flex;
+  font-size: .28rem;
+  line-height: .8rem;
+  height: .8rem;
+  background-color: #E6E6E8;
+  text-align: center;
+}
+.business-list span{
+  margin-left: .2rem;
+}
+.span2{
+  margin-left: .6rem!important;
+}

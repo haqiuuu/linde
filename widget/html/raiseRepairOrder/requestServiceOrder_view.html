@@ -1,0 +1,92 @@
+<div class="ui-main" v-hammer:tap="onCloseDropdown">
+    <div class="ui-form">
+        <div class="ui-form__title">
+            <span>{{language.raiseRepairOrder_request_service_order_title}}</span>
+        </div>
+        <div class="ui-form__top">
+            <div class="ui-form__item" v-for="(item,index) in formListTop" :key="index">
+                <div class="ui-item__label">
+                    {{item.label}}:
+                </div>
+                <div class="ui-item__value">
+                    <span v-if="!item.type">{{form[item.field]}}</span>
+                    <span v-else-if="item.type == 'input'" class="ui-item__input">
+						<input :ref="item.field" @blur="dataValidation(item.field)" type="text"
+                               @input="onChangeValueInput($event,item.field)"
+                               :value="form[item.field]"/>
+						<img src="../../image/serviceOrder/edit.png" v-hammer:tap="()=>onAutoFocusTap(item.field)">
+					</span>
+                    <span v-else-if="item.type == 'area'" class="ui-item__input">
+						<textarea :ref="item.field" rows="4" @blur="dataValidation(item.field)" type="text"
+                                  @input="onChangeValueInput($event,item.field)"
+                                  :value="form[item.field]"/>
+						<img src="../../image/serviceOrder/edit.png" v-hammer:tap="()=>onAutoFocusTap(item.field)">
+					</span>
+                    <div class="ui-form__tips">
+                        <span v-show="tips[item.field]">{{tips[item.field]}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-form__bottom">
+            <div class="ui-form__item" v-for="(item,index) in formListBottom" :key="index">
+                <div class="ui-item__label">
+                    {{item.label ? item.label + ':' : item.label }}
+                </div>
+                <div class="ui-item__value">
+                    <span v-if="!item.type">{{form[item.field]}}</span>
+                    <span v-else-if="item.type == 'input'" class="ui-item__input">
+					<select class="ui-item__select" :value="form[item.field]">
+						<option :value="dropdownItem.value" v-for="(dropdownItem,index) in descriptionList"
+                                :key="index">{{dropdownItem.label}}</option>
+					</select>
+                        <!--					<div class="ui-form__dropdown" v-hammer:tap="changeDescriptionDropDown">-->
+                        <!--						<span class="ui-dropdown__title">{{form[item.field] ?  form[item.field] : ''}}</span>-->
+                        <!--						<img class="ui-img__down" src="../../image/serviceOrder/down.png"/>-->
+                        <!--                	</div>-->
+                        <!--						<div class="ui-dropdown__items" v-show="showDropdown">-->
+                        <!--						  <div v-hammer:tap="function(e){onChangeTap(dropdownItem)}"-->
+                        <!--                               v-for="(dropdownItem,index) in descriptionList" :key="index"-->
+                        <!--                               :class="dropdownItem.value == form[item.field] ? 'current' : null"-->
+                        <!--                               class="ui-dropdown__item">{{dropdownItem.label}}</div>-->
+                        <!--						</div>-->
+					</span>
+                    <span v-else-if="item.type == 'area'" class="ui-item__area">
+						<textarea rows="4" @blur="dataValidation(item.remarks)" type="text"
+                                  @input="onChangeValueInput($event,item.field)"
+                                  :value="form[item.remarks]"/>
+					</span>
+                    <span v-else-if="item.type == 'img'" class="ui-item__img clearfix">
+						<img src="../../image/serviceOrder/img.png" v-hammer:tap="onOpenPhotoTap">
+						<div class="ui-imgList">
+							<!-- <div v-hammer:tap="()=>onDeleteImgTap(index)" class="ui-imgList__item"
+                                 v-for="(item,index) in getImg[0]" :key="index"
+                                :style="{background:'url('+ item.url + ') no-repeat center center/cover'}">
+
+							</div> -->
+              <div class="img-wrapper">
+                <div class="img" v-for="(item,index) in getImg" :key="index" v-hammer:tap="()=>onPreviewTap(index)">
+                  <img :src="item" alt="">
+                </div>
+              </div>
+						</div>
+					</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui-submit" v-hammer:tap="onSubmitTap">
+        <span>{{language.raiseRepairOrder_request_service_order_submit}}</span>
+    </div>
+    <div class="ui-modal" v-show="showModal">
+        <div class="ui-confirm">
+            <div class="ui-confirm__content">{{language.raiseRepairOrder_request_service_order_file_limit_tips}}</div>
+            <div class="ui-confirm__buttons">
+                <div class="ui-confirm__button" v-hammer:tap="onCloseModalTap">
+                    {{language.raiseRepairOrder_request_service_order_file_limit_btn}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

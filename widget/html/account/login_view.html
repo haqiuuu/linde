@@ -1,0 +1,35 @@
+<div class="ui-main">
+    <div class="ui-main__container clearfix">
+        <div class="ui-main__title">{{language.account_login_title}}</div>
+        <div class="ui-form clearfix">
+            <div class="ui-form__item ui-form__username">
+                <input @blur="dataValidation('account')" type="text"
+                       :placeholder="language.account_account_placeholder"
+                       @input="onChangeValueInput($event,'account')" :value="form.account"/>
+            </div>
+            <div class="ui-form__tips">
+                <span v-show="tips.account">{{tips.account}}</span>
+            </div>
+            <div class="ui-form__item ui-form__password">
+                <input @blur="dataValidation('password')" type="password"
+                       :placeholder="language.account_password_placeholder"
+                       @input="onChangeValueInput($event,'password')" :value="form.password"/>
+            </div>
+            <div class="ui-form__tips">
+                <span v-show="tips.password || globalTips">{{tips.password || globalTips}}</span>
+            </div>
+            <div class="ui-submit fr" v-hammer:tap="onSubmitTap">{{language.account_login_submit_btn}}</div>
+        </div>
+        <div class="ui-register">
+            <span v-hammer:tap="onEnterRegisterTap">{{language.account_register_btn}}</span>
+        </div>
+        <div class="ui-forget">
+            <div class="ui-forget__item">
+                <span v-hammer:tap="onEnterForgetPasswordTap">{{language.account_forget_password_btn}}</span>
+            </div>
+            <div class="ui-forget__item">
+                <span v-hammer:tap="onEnterForgetNameTap">{{language.account_forget_name_btn}}</span>
+            </div>
+        </div>
+    </div>
+</div>

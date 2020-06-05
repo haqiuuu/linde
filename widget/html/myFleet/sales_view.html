@@ -1,0 +1,42 @@
+<div class="ui-main">
+    <!-- 搜索框 -->
+    <div class="ui-search">
+        <div class="ui-search_icon" v-hammer:tap="onSearch"></div>
+        <input type="text" v-model="search" :placeholder="LANGUAGE.search">
+        <div class="ui-search__toggle" v-hammer:tap="onToggleTap" v-for="(item,index) in itemTitle" :key="index">
+            <span>{{type}}</span>
+            <div class="ui-triangleTop" v-show="isTriangle === true"></div>
+            <div class="ui-triangleDown" v-show="isTriangle === false"></div>
+        </div>
+    </div>
+
+    <div class="company" v-show="type!='Truck S/N'">
+      <div class="Company-item" v-for="(item,index) in businessList" :key="index" v-hammer:tap="()=>onDetailTap(item)">
+        <span>{{item}}</span>
+      </div>
+    </div>
+
+    <div class="truck" v-show="type=='Truck S/N'">
+      <div class="truck-title" >
+        <span>Turck S/N</span>
+        <span>Model</span>
+      </div>
+      <div class="truck-content" v-for="(item,index) in truckList" :key="index" v-hammer:tap="()=>onCheckTap(item.truckId)">
+        <span>{{item.truckId}}</span>
+        <span>{{item.model}}</span>
+      </div>
+    </div>
+
+    <!-- 点击下拉菜单 -->
+    <!-- <div class="ui-menu" v-if="isSlide"> -->
+    <div class="ui-menu" v-show="isSlide">
+        <ul>
+            <li v-hammer:tap="()=>onToggleChange(0)">Truck S/N</li>
+            <li v-hammer:tap="()=>onToggleChange(1)">Company name</li>
+        </ul>
+        <!-- <ul v-for="(item,index) in menuList" :key="index">
+            <li :class="[menuList[activeIndex].type ? 'current' : 'uncurrent']" v-hammer:tap="()=>onToggleMenuTap(index)">{{item.name}}</li>
+        </ul> -->
+    </div>
+
+</div>

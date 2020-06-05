@@ -1,0 +1,17 @@
+<div class="ui-main">
+    <div class="ui-content" v-for="(item,index) in list" :key="index" v-hammer:tap="()=>onDetailTap(item.truckId)">
+        <!-- {{LANGUAGE.repair_customer_truck}}:{{item.truck}} -->
+        <div class="content-wrapper">
+          <span>Model: </span>
+          <span style="margin-left:.4rem">{{item.model}}</span>
+        </div>
+        <div class="content-wrapper">
+          <span>Truck S/N#: </span>
+          <span style="margin-left:.4rem">{{item.truckId}}</span>
+        </div>
+        <div class="content-wrapper">
+          <span>Fleet No: </span>
+          <span style="margin-left:.4rem">{{item.truckId}}</span>
+        </div>
+    </div>
+</div>

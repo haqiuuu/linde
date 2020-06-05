@@ -1,0 +1,57 @@
+<div class="ui-main">
+  <div class="content">
+    <div class="info space-between">
+      <span class="span1">Company name</span>
+      <span>{{orderList.Companyname}}</span>
+    </div>
+    <div class="info space-between">
+      <span class="span1">Model</span>
+      <span>{{orderList.Model}}</span>
+    </div>
+
+    <div class="info space-between">
+      <span class="span1">Turck NO.</span>
+      <span>{{orderList.TurckNO}}</span>
+    </div>
+    <div class="info space-between border">
+      <span class="span1">Fleet NO.</span>
+      <span>{{orderList.FleetNO}}</span>
+    </div>
+    <div class="info space-between">
+      <span class="span1">Contact person:</span>
+      <span>{{orderList.Contactperson}}</span>
+    </div>
+    <div class="info space-between border">
+      <span class="span1">Tel:</span>
+      <span>{{orderList.Tel}}</span>
+    </div>
+
+    <div class="info space-between border">
+      <span class="span1">Status:</span>
+        <span>{{orderList.Status}}</span>
+    </div>
+
+    <div class="area">
+      <div class="">
+        <span class="">Truck Location:</span>
+      </div>
+      <div class="">
+        <span>{{orderList.TruckLocation}}</span>
+      </div>
+    </div>
+    <div class="area">
+      <div class="">
+        <span class="">Remarks:</span>
+      </div>
+      <div class="">
+        <span>{{orderList.Remarks}}</span>
+      </div>
+    </div>
+    <div class="img-wrapper">
+      <div class="img" v-for="(item,index) in imgList" :key="index" v-hammer:tap="()=>onPreviewTap(index)">
+        <img :src="item" alt="">
+      </div>
+    </div>
+  </div>
+
+</div>

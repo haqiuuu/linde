@@ -1,0 +1,255 @@
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+.clearfix:after,
+.clearfix:before {
+  display: table;
+  content: '';
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.ui-main {
+  background-color: #fff;
+  overflow-y: auto;
+  height: 100%;
+}
+.ui-menus {
+  padding-top: 0.07rem;
+  padding-left: 0.07rem;
+}
+.ui-menus__item:nth-of-type(-n+2) {
+  height: 2.1rem;
+  width: 50%;
+}
+.ui-menus__item:first-child .ui-menus__warp {
+  padding: 0;
+  display: block;
+  position: relative;
+  background: url('../../image/home/linde.png') no-repeat center center / cover;
+}
+.ui-menus__item:first-child .ui-menus__warp .ui-menus__icon {
+  position: absolute;
+  width: 2.17rem;
+  height: 0.75rem;
+  bottom: 0.2rem;
+  right: 0.2rem;
+}
+.ui-menus__item:first-child .ui-menus__warp .ui-menus__img {
+  background: url('../../image/home/lindelogo.png') no-repeat center center / cover;
+}
+.ui-menus__item:first-child .ui-menus__title {
+  padding-left: 0.2rem;
+  padding-top: 0.2rem;
+  color: #fff;
+  width: 100%;
+  text-align: left;
+}
+.ui-menus__item {
+  padding-right: 0.07rem;
+  width: 33.3333%;
+  height: 2.3rem;
+  margin: 0 auto;
+  margin-bottom: 0.07rem;
+  font-size: 0.24rem;
+  float: left;
+}
+.ui-menus__item .ui-menus__warp {
+  width: 100%;
+  height: 100%;
+  padding: 0.6rem 0.4rem 0;
+  background-color: #E0DDDD;
+  text-align: center;
+}
+.ui-menus__item .ui-menus__title {
+  line-height: 1;
+  height: 0.53rem;
+}
+.ui-menus__item .ui-menus__icon {
+  color: #A02E24;
+  font-size: 1.16rem;
+  padding-bottom: 0.2rem;
+  width: 0.86rem;
+  height: 0.77rem;
+  margin: 0 auto;
+}
+.ui-menus__item .ui-menus__img {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.ui-swiper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3.3rem;
+  margin-top: 2.3rem;
+}
+.ui-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 1.2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+.ui-confirm {
+  background-color: #fff;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  width: 100%;
+  color: #000;
+  font-size: 0.3rem;
+}
+.ui-confirm__content {
+  padding: 0.35rem 1rem 0.42rem;
+  border: 1px solid #CFCFCF;
+  text-align: center;
+  line-height: 0.48rem;
+}
+.ui-confirm__buttons {
+  position: relative;
+  padding: 0.1rem 0;
+  height: 0.7rem;
+  line-height: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.ui-confirm__button {
+  text-align: center;
+  width: 49%;
+  color: #221815;
+}
+.ui-confirm__button:nth-of-type(1) {
+  padding-right: 1px;
+}
+.ui-confirm__button:nth-of-type(1):after {
+  content: "";
+  display: block;
+  float: right;
+  width: 1px;
+  height: 0.5rem;
+  background-color: #CFCFCF;
+}
+.ui-confirm__disabled {
+  color: #999;
+}
+
+.ui-form__code{
+  position: relative;
+}
+.ui-form__item input {
+  width: 100%;
+  height: 0.4rem;
+  padding: 0 0 0.12rem;
+  border: none;
+  vertical-align: bottom;
+  border-bottom: 1px solid #605E5D;
+  font-size: 0.33rem;
+  color: #161616;
+  background-color: transparent;
+}
+.ui-form__getCode{
+  right: 0;
+  font-size: 0.28rem;
+  line-height: 1;
+  position: absolute;
+  bottom: 0.12rem;
+}
+.ui_disabled {
+  color: #605E5D;
+}
+.message-wrapper{
+  width: 100%;
+  height: 100%;
+  position: fixed;;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.message-bac{
+  background-color: #000;
+  opacity: .5;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0
+}
+.message-contet{
+  width: 100%;
+  position: absolute;
+  font-size: .33rem;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  height: 3.5rem;
+  width: 5.1rem;
+  border-radius: .2rem;
+  background-color: #F5F5F5;
+  z-index: 2;
+  padding: .5rem .67rem 0 .67rem;
+}
+.message-contet span{
+  font-weight: 500;
+}
+.content-info{
+  text-align: center;
+}
+.content-info span{
+  font-size: .33rem;
+  font-weight: 500;
+}
+.button-group{
+  width:5.1rem;
+  height: .78rem;
+  border-top: 1px solid #BFBFBF;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 0 .7rem;
+}
+.button-group span{
+  line-height: .78rem;
+  text-align: center;
+}

@@ -1,0 +1,196 @@
+@import '../base/_config.less';
+
+.clearfix:after,
+.clearfix:before {
+  display: table;
+  content: '';
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.ui-main {
+  background-color: #fff;
+  overflow-y: auto;
+  height: 100%;
+  // display: flex;
+  // flex-wrap:wrap;
+  // align-content:space-between;
+}
+
+.ui-menus {
+  padding-top: .07rem;
+  padding-left: .07rem;
+}
+
+
+.ui-menus__item:nth-of-type(-n+2) {
+  height: 2.1rem;
+  width: 50%;
+}
+
+.ui-menus__item:first-child .ui-menus__warp {
+  padding: 0;
+  display: block;
+  //background-color: @mainColor;
+  position: relative;
+
+  background: url('../../image/home/linde.png') no-repeat center center/cover;
+
+  .ui-menus__icon {
+    position: absolute;
+    width: 2.17rem;
+    height: .75rem;
+    bottom: .2rem;
+    right: .2rem;
+  }
+
+  .ui-menus__img {
+    background: url('../../image/home/lindelogo.png') no-repeat center center/cover;
+  }
+}
+
+.ui-menus__item:first-child .ui-menus__title {
+  padding-left: 0.2rem;
+  padding-top: 0.2rem;
+  color: #fff;
+  width: 100%;
+  text-align: left;
+}
+
+.ui-menus__item {
+  padding-right: 0.07rem;
+  width: 33.3333%;
+  height: 2.3rem;
+  margin: 0 auto;
+  margin-bottom: .07rem;
+  font-size: .24rem;
+  float: left;
+
+  .ui-menus__warp {
+    width: 100%;
+    height: 100%;
+    padding: .6rem .4rem 0;
+    background-color: #E0DDDD;
+    text-align: center;
+  }
+
+  .ui-menus__title {
+    line-height: 1;
+    height: .53rem;
+  }
+
+  .ui-menus__icon {
+    color: #A02E24;
+    font-size: 1.16rem;
+    padding-bottom: .2rem;
+    width: .86rem;
+    height: .77rem;
+    margin: 0 auto;
+  }
+
+  .ui-menus__img {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+  }
+
+}
+
+
+.ui-swiper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3.3rem;
+  margin-top: 2.3rem;
+}
+
+.ui-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 1.2rem;
+  background-color: rgba(0, 0, 0, .3);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.ui-confirm {
+  background-color: #fff;
+  border-radius: .2rem;
+  overflow: hidden;
+  width: 100%;
+  color: #000;
+  font-size: .3rem;
+}
+
+
+.ui-confirm__content {
+  padding: .35rem 1rem .42rem;
+  border: 1px solid #CFCFCF;
+  text-align: center;
+  line-height: .48rem;
+}
+.ui-confirm__buttons {
+  position: relative;
+  padding: .1rem 0;
+  height: .7rem;
+  line-height: .5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ui-confirm__button {
+  text-align: center;
+  width: 49%;
+  color: #221815;
+}
+
+.ui-confirm__button:nth-of-type(1) {
+  padding-right: 1px;
+}
+
+.ui-confirm__button:nth-of-type(1):after {
+  content: "";
+  display: block;
+  float: right;
+  width: 1px;
+  height: .5rem;
+  background-color: #CFCFCF;
+}
+
+.ui-confirm__disabled {
+  color: #999;
+}

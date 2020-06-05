@@ -1,0 +1,42 @@
+<style>
+    #header {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        z-index: 999;
+        height: 60px;
+        background-color: #BE011C;
+    }
+    .ui-header__customer {
+        text-align: center;
+    }
+    .ui-header__icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 104px;
+        height: 30px;
+        margin-right: 12px;
+        background: url(../../image/baseWin/logo-linde.png) no-repeat;
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+    }
+    .ui-header__text {
+        display: inline-block;
+        vertical-align: middle;
+        color: #fff;
+        font-size: 19px;
+        padding-top: 15px;
+    }
+</style>
+<div id="header" class="ui-header">
+    <div class="ui-header__customer">
+        <div class="ui-header__icon"></div>
+        <div class="ui-header__text" id="customTitle">Service Manager</div>
+    </div>
+    <div id="rightBtn" class="ui-header__rightBtn" onclick="btnTap(2);" tapmode="active">
+        <i id="rightIcon" class="iconfont is-right"></i>
+    </div>
+</div>
+<script>
+    document.getElementById('header').style.opacity = 1;
+</script>

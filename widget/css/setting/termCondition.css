@@ -1,0 +1,34 @@
+.ui-header{
+  height: 0.62rem;
+  line-height: 0.62rem;
+  font-size: .32rem;
+  font-weight: 500;
+  color: #f0f0f0;
+  background-color: #999999;
+  text-align: center;
+  margin: .07rem;
+}
+.content-wrapper{
+  margin: .07rem;
+  background-color: #F5F3F3;
+  min-height: 12rem;
+  padding: 0 .23rem .57rem .41rem;
+}
+.content{
+  padding: .37rem 0;
+}
+.content-title{
+  margin-bottom: .2rem;
+  color: #221815;
+  font-size: .32rem;
+  font-weight: 500;
+}
+
+
+.content-info{
+  font-size: .32rem;
+  font-weight: 400;
+  color: #221815;
+  white-space: normal;
+  word-break: break-all;
+}

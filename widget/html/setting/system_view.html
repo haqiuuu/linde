@@ -1,0 +1,68 @@
+<div class="ui-main">
+    <div class="ui-item">
+        <span>{{language.setting_system_language}}</span>
+        <div class="ui-item__toggle" v-hammer:tap="onToggleTap">
+            <!-- <div class="ui-item__toggle" v-hammer:tap="()=>onToggleTap()"></div> -->
+            <div class="ui-item__language">{{list[activeIndex].title}}</div>
+            <div class="ui-toggleLanguageDown" v-show="isTriangle === false"></div>
+            <div class="ui-toggleLanguageUp" v-show="isTriangle === true"></div>
+        </div>
+        <!-- <div class="ui-toggleLanguageDown" v-show="isTriangle === false" v-hammer:tap="onToggleTap"></div>
+        <div class="ui-toggleLanguageUp" v-show="isTriangle === true" v-hammer:tap="onToggleTap"></div> -->
+    </div>
+    <div class="ui-item" v-hammer:tap="onAccountInfoTap">
+        <span>{{language.setting_system_account}}</span>
+    </div>
+    <div class="ui-item">
+        <span>{{language.setting_system_notification}}</span>
+        <div class="ui-switch" v-hammer:tap="onSwithTap">
+            <div class="ui-switch_on" v-show="isSwitch === true">ON</div>
+            <div class="ui-switch_off" v-show="isSwitch === false">OFF</div>
+        </div>
+    </div>
+    <div class="ui-item" v-hammer:tap="onTermOfUse">
+        <span>{{language.setting_system_termsUs}}</span>
+    </div>
+    <div class="ui-item" v-hammer:tap="onStatement">
+        <span>{{language.setting_system_privacy}}</span>
+    </div>
+    <div class="ui-item" v-hammer:tap="ontermCondition">
+        <span>{{language.setting_system_condition}}</span>
+    </div>
+    <div class="ui-item" v-hammer:tap="onaboutus">
+        <span>{{language.setting_system_aboutUs}}</span>
+    </div>
+    <div class="ui-item" v-hammer:tap="onopenmsg">
+        <span>{{language.setting_system_out}}</span>
+    </div>
+
+    <!-- 下拉菜单 -->
+    <div class="ui-menu" v-if="isSlide">
+        <ul v-for="(item,index) in list">
+            <li :class="[index == activeIndex ? 'current' : '']" v-hammer:tap="()=>onToggleLanguageTap(index)">{{item.title}}</li>
+            <!-- <li v-hammer:tap="()=>onToggleLanguageTap(index)">{{item.title}}</li> -->
+        </ul>
+    </div>
+
+    <!--弹窗-->
+    <div class="message-wrapper" v-if="showmessage">
+      <div class="message-bac"></div>
+      <div class="ui-message">
+        <div class="message-content">
+          <span>Logging out will not delete any data but you will not receive a notification when receiving a new massages.</span>
+        </div>
+        <div class="ui-button-group">
+          <div class="ui-button-cancel" v-hammer:tap="onclosemsg">
+            <span>Cancel</span>
+          </div>
+          <div class="button-split">
+            |
+          </div>
+          <div class="ui-button-logout" v-hammer:tap="onLogout">
+            <span>Log Out</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>

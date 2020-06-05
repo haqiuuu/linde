@@ -1,0 +1,59 @@
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.ui-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.ui-nav__list {
+  position: relative;
+  width: 5.65rem;
+  background-color: #BF001D;
+}
+.ui-nav__item {
+  position: relative;
+  height: 1rem;
+  padding-left: 1.34rem;
+  border-bottom: 1px solid #A02E24;
+}
+.ui-nav__item:active {
+  background-color: #A02E24;
+}
+.ui-nav__icon {
+  position: absolute;
+  top: 0;
+  left: 0.52rem;
+  bottom: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: auto 0;
+  background-image: url(../../image/placeholder.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.ui-nav__title {
+  line-height: 1rem;
+  font-size: 0.3rem;
+  color: #FEFDFD;
+}
