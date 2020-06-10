@@ -2,33 +2,33 @@
   <div class="content">
     <div class="info space-between">
       <span class="span1">Company name</span>
-      <span>{{orderList.Companyname}}</span>
+      <span>{{orderList.customer || '--'}}</span>
     </div>
     <div class="info space-between">
       <span class="span1">Model</span>
-      <span>{{orderList.Model}}</span>
+      <span>{{orderList.model || '--'}}</span>
     </div>
 
     <div class="info space-between">
       <span class="span1">Turck NO.</span>
-      <span>{{orderList.TurckNO}}</span>
+      <span>{{orderList.orderId || '--'}}</span>
     </div>
     <div class="info space-between border">
       <span class="span1">Fleet NO.</span>
-      <span>{{orderList.FleetNO}}</span>
+      <span>{{orderList.fleet || '--'}}</span>
     </div>
     <div class="info space-between">
       <span class="span1">Contact person:</span>
-      <span>{{orderList.Contactperson}}</span>
+      <span>{{orderList.contact || '--'}}</span>
     </div>
     <div class="info space-between border">
       <span class="span1">Tel:</span>
-      <span>{{orderList.Tel}}</span>
+      <span>{{orderList.phone || '--'}}</span>
     </div>
 
     <div class="info space-between border">
       <span class="span1">Status:</span>
-        <span>{{orderList.Status}}</span>
+        <span>{{orderList.Status || '--'}}</span>
     </div>
 
     <div class="area">
@@ -36,7 +36,7 @@
         <span class="">Truck Location:</span>
       </div>
       <div class="">
-        <span>{{orderList.TruckLocation}}</span>
+        <span>{{orderList.truckLocation || '--'}}</span>
       </div>
     </div>
     <div class="area">
@@ -44,7 +44,7 @@
         <span class="">Remarks:</span>
       </div>
       <div class="">
-        <span>{{orderList.Remarks}}</span>
+        <span>{{orderList.remarks || '--'}}</span>
       </div>
     </div>
     <div class="img-wrapper">

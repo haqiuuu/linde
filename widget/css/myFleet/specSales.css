@@ -19,6 +19,9 @@
   margin: 0.07rem;
   background-color: #d3d3d4;
 }
+input{
+  -webkit-user-select:text !important;
+}
 .ui-headTab .ui-leftTab {
   float: left;
   width: 50%;

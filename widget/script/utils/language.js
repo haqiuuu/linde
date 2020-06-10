@@ -138,8 +138,8 @@ define(function (require, exports, module) {
             setting_account_name: 'Name',
             setting_account_phone: 'Phone Number',
             setting_account_mail: 'Mailbox',
-            setting_account_code: 'Set Customer Code',
-            setting_account_truck: 'Set Truck S/N',
+            setting_account_code: 'Customer Code',
+            setting_account_truck: 'Truck S/N',
             setting_account_reset: 'Password reset',
             setting_account_title: 'Account Info',
 

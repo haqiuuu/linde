@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div style="display: flex;">
+    <!-- <div style="display: flex;">
         <div class="ui-account" style="font-size: .3rem;padding-top: .2rem; margin-right: .3rem;" v-hammer:tap="onEnterLoginTap">
             登录注册
         </div>
@@ -29,8 +29,8 @@
         <div class="ui-account" style="font-size: .3rem;padding-top: .2rem; margin-right: .3rem;" v-hammer:tap="onUserTap">
             切换用户
         </div>
-    </div>
-    <div class="message-wrapper" v-show="false">
+    </div> -->
+    <div class="message-wrapper" v-if="emailShow">
       <div class="message-bac">
       </div>
       <div class="message-contet">
@@ -39,7 +39,7 @@
               <input type="text" :placeholder="lang.account_company_email_placeholder" v-model="email"/>
           </div>
           <div class="ui-form__item ui-form__code">
-              <input type="text" :placeholder="lang.account_code_placeholder" :value="code"/>
+              <input type="text" :placeholder="lang.account_code_placeholder" v-model="code"/>
               <div class="ui-form__getCode" v-hammer:tap="getCode" v-show="!isGetCode">
                 <!--  v-hammer:tap="getCode"-->
                   {{lang.account_get_code_title}}
@@ -47,7 +47,7 @@
               <div class="ui-form__getCode ui_disabled" v-show="isGetCode">{{time}}</div>
           </div>
         </div>
-        <div class="button-group">
+        <div class="button-group" v-hammer:tap="onSubmit">
             <span>OK</span>
         </div>
       </div>

@@ -34,6 +34,9 @@
   background: url(../../image/myFleet/search.png) no-repeat;
   background-size: contain;
 }
+input{
+  -webkit-user-select:text !important;
+}
 .ui-search input {
   position: absolute;
   left: 0.99rem;

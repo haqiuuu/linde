@@ -35,6 +35,8 @@ define(function(require, exports, module) {
               })
             },
             init(){
+              console.log("++++++++++++++++++++++++++++==");
+              console.log(_g.getLS('customCode'));
               Http.ajax({
                 data: {
                 	"customerCode": _g.getLS('customCode'),

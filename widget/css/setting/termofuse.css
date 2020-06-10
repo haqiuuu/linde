@@ -13,6 +13,7 @@
   font-size: .32rem;
   font-weight: 400;
   margin-bottom: 1rem;
+  word-break: break-all;
 }
 .content-wrapper{
   background-color: #f3f3f3;

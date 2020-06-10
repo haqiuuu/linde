@@ -164,12 +164,12 @@ define(function (require, exports, module) {
                             var resultList = ret.list.map(function (v) {
                                 return {url: v.thumbPath};
                             })
-                            self.ImgList = ret;
+                            self.ImgList = ret.list;
                             for (var i = 0; i < resultList.length; i++) {
                               self.imageList.push(resultList[i].url)
                             }
                             // self.imageList.push(resultList);
-                            console.log(JSON.stringify(self.imageList));
+                            console.log(JSON.stringify(ret));
                         }
 
                     },
@@ -213,6 +213,7 @@ define(function (require, exports, module) {
                 //   return;
                 // }
 
+                // 保存
                 Http.ajax({
                   data: {
                     // "customerCode":_g.getLS("customCode"),
@@ -225,6 +226,8 @@ define(function (require, exports, module) {
                     "phone":forms.tel,
                     "faultDecrip":forms.field,
                     "remarks":forms.remarks,
+                    "ifexcel": 1,
+                    "userId": _g.getLS("userId"),
                     "img":self.ImgList
                   },
                   url: '/api/list/insert',
@@ -244,6 +247,33 @@ define(function (require, exports, module) {
                     console.log(JSON.stringify(err))
                   }
                 });
+                // 上传图片
+                // var flag=false;
+                // for(let i in this.ImgList){
+                //   Http.imgUpload({
+                //     data: {
+                //       "file":self.ImgList[i]
+                //     },
+                //     url: '/api/show/picture/uploadImg',
+                //     isSync: false,
+                //     lock: false,
+                //     success: function(ret) {
+                //       if(ret.message == 'Update Success'){
+                //         _g.toast(ret.message);
+                //         api.closeWin();
+                //       }else{
+                //         _g.toast(ret.message);
+                //       }
+                //
+                //     },
+                //     error: function(err) {
+                //       alert("faild")
+                //       console.log(JSON.stringify(err))
+                //     }
+                //   });
+                // }
+                // 上传图片
+
 
             },
             onAutoFocusTap: function (field) {

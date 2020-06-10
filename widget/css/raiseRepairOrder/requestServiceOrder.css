@@ -15,6 +15,13 @@
 /* 遮罩透明度 */
 textarea:focus {
   outline: none;
+  -webkit-user-select:text !important;
+}
+input{
+  -webkit-user-select:text !important;
+}
+textarea{
+    -webkit-user-select:text !important;
 }
 .ui-form {
   padding: 0.073rem 0.066rem;

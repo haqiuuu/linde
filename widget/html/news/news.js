@@ -37,7 +37,11 @@ define(function(require, exports, module) {
                 }
             })
           },
+          onSearchTap: function(){
+            this.init()
+          },
           init(){
+            var that = this;
             Http.ajax({
               data: {
                 "endTime": "",
@@ -49,7 +53,7 @@ define(function(require, exports, module) {
               	"newsLink": "",
               	"newsSort": 0,
               	"newsStatus": 1,
-              	"newsTitle": "",
+              	"newsTitle": that.search,
               	"pageNo": 0,
               	"pageSize": 0,
               	"startTime": "",

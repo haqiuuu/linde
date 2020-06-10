@@ -6,7 +6,9 @@
   line-height: .8rem;
   font-weight: 400;
 }
-
+input{
+  -webkit-user-select:text !important;
+}
 .business-list{
   display: flex;
   font-size: .28rem;

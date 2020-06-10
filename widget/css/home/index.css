@@ -18,6 +18,9 @@
   display: table;
   content: '';
 }
+input{
+  -webkit-user-select:text !important;
+}
 .clearfix:after {
   clear: both;
 }
@@ -178,7 +181,7 @@
 }
 .ui-form__item input {
   width: 100%;
-  height: 0.4rem;
+  height: 0.6rem;
   padding: 0 0 0.12rem;
   border: none;
   vertical-align: bottom;
@@ -192,7 +195,7 @@
   font-size: 0.28rem;
   line-height: 1;
   position: absolute;
-  bottom: 0.12rem;
+  bottom: 0.25rem;
 }
 .ui_disabled {
   color: #605E5D;
@@ -221,7 +224,7 @@
   left:50%;
   transform: translate(-50%,-50%);
   height: 3.5rem;
-  width: 5.1rem;
+  width: 5.6rem;
   border-radius: .2rem;
   background-color: #F5F5F5;
   z-index: 2;

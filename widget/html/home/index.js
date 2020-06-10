@@ -165,7 +165,8 @@ define(function(require, exports, module) {
             code:"",
             time:60,
             isGetCode:false,
-            email:""
+            email:"",
+            emailShow:false,
         },
         computed:{
 
@@ -176,8 +177,13 @@ define(function(require, exports, module) {
         created: function() {
             // this.getMenus();
             this.getSwiperData();
+
             this.init();
             this.checkuser();
+            if((_g.getLS("email")==null || _g.getLS("email")=='')&&_g.getLS("userId")) {
+              this.emailShow = true;
+
+            }
             // this.checkVersion();
         },
         filters: {
@@ -191,6 +197,7 @@ define(function(require, exports, module) {
             getMenus: function() {
                 // main.menus = Menus;
             },
+            // 获取验证码
             getCode: function () {
                 console.log('getCode');
                 clearInterval(this.timer);
@@ -209,13 +216,46 @@ define(function(require, exports, module) {
                 Http.ajax({
                 	data: {
                   	"email": this.email,
-                    "type":"register_code_",
+                    "type":"reset_email_",
+                    "userId":_g.getLS("userId")
                   },
                 	url: '/api/user/sendVerCode',
                 	isSync: true,
                 	lock: true,
                 	success: function(ret) {
                     console.log("code-success");
+                  },
+                	error: function(err) {
+                    alert("faild")
+                    console.log(JSON.stringify(err))
+                  }
+                });
+            },
+            // 提交邮箱
+            onSubmit: function () {
+              var that =this;
+                Http.ajax({
+                	data: {
+                  	"email": this.email,
+                    "type":"reset_email_",
+                    "userId":_g.getLS("userId"),
+                    "verCode":this.code
+                  },
+                	url: '/api/user/updateEmail',
+                	isSync: true,
+                	lock: true,
+                	success: function(ret) {
+                    console.log("code-success");
+                    if(ret.message == 'Update Success'){
+                      _g.toast(ret.message);
+                      _g.setLS('email', that.email);
+                      that.emailShow=false;
+                      that.init();
+                    }else{
+                      _g.toast(ret.message);
+                      that.init();
+                      return
+                    }
                   },
                 	error: function(err) {
                     alert("faild")
@@ -260,9 +300,11 @@ define(function(require, exports, module) {
                       for (var i = 0; i < ret.data.list.length; i++) {
                         ret.data.list[i].id = i+1;
                         ret.data.list[i].img = ret.data.list[i].pictureUrl;
-                        ret.data.list[i].url = ''
+                        ret.data.list[i].url = '';
+                        _g.setLS("rotationTime",ret.data.list[i].rotationTime);
                       }
                       that.swiperList=ret.data.list;
+                      that.initSwiper();
                     }else{
                       alert(ret.message);
                     }
@@ -340,7 +382,7 @@ define(function(require, exports, module) {
             },
             // 点击下方滑动图片
             onEnterSwiperTap: function(item) {
-              
+
               if(item == '' || item == null){
                 _g.toast("News Dosen't Exit");
                 return;
@@ -370,13 +412,42 @@ define(function(require, exports, module) {
                 //     url: '../raiseRepairOrder/requestServiceOrder_frame.html',
                 // });
             },
+            initSwiper() {
+                var swiper = new Swiper('.swiper-container', {
+                    // direction: 'horizontal',
+                    // initialSlide: 0,
+                    // loop : true,
+                    // initialSlide :0,
+                    observer:true,  //修改swiper自己或子元素时，自动初始化swiper
+                    observeParents:true,  //修改swiper的父元素时，自动初始化swiper
+                    autoplay: Math.min(_g.getLS("rotationTime")*1000,6000),
+                    autoplayDisableOnInteraction : false,
+                    loopAdditionalSlides : 2,
+                    // loop:true,
+                    // autoplayDisableOninteraction: false,
+                    // onSlideChangeEnd: function(swiper){
+                    //     swiper.update();  //更新Swiper，这个方法包含了updateContainerSize，updateSlidesSize，updateProgress，updatePagination，updateClasses方法。也就是数据改变是重新初始化一次swiper；
+                    //     swiper.startAutoplay();  //重新开始自动切换；
+                    //     swiper.reLoop();  //重新对需要循环的slide个数进行计算，当你改变了slidesPerView参数时需要用到，需要自动轮播的时候必须要加上；
+                    // }
+                });
+            },
             init(){
               var ajpush = api.require('ajpush');
-              var param = {id:-1};
-              ajpush.clearNotification(param,function(ret) {
-                  if(ret && ret.status){
-                  }
-                });
+               if(api.systemType == "android"){
+                   ajpush.init(function(ret) {
+                       var param = {alias:'user1',tags:['user']};
+                       ajpush.bindAliasAndTags(param,function(ret) {
+                       });
+                       ajpush.setListener(jpushListener);
+                   });
+               }else if(api.systemType == "ios"){
+                   ajpush.setListener(jpushListener);
+                   var param = {alias:'user2',tags:['user']};
+                   ajpush.bindAliasAndTags(param,function(ret) {
+                   });
+               }
+
 
 
             },
@@ -441,7 +512,7 @@ define(function(require, exports, module) {
 
     };
 
-    _page.initSwiper();
+    // _page.initSwiper();
 
     (function() {
 

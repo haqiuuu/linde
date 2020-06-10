@@ -1,5 +1,6 @@
 define(function(require, exports, module) {
     var LANGUAGE = require('U/language')[_g.getLS('LANGUAGE')];
+    var Http = require('U/http');
     var main = new Vue({
         el: '#main',
         template: _g.getTemplate('myFleet/spec_view'),
@@ -19,10 +20,11 @@ define(function(require, exports, module) {
               "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1315256422,3713498384&fm=26&gp=0.jpg","https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1315256422,3713498384&fm=26&gp=0.jpg","https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1315256422,3713498384&fm=26&gp=0.jpg",
               "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=364676311,205430106&fm=26&gp=0.jpg","https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1315256422,3713498384&fm=26&gp=0.jpg","https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1315256422,3713498384&fm=26&gp=0.jpg",
               "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1315256422,3713498384&fm=26&gp=0.jpg","https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1315256422,3713498384&fm=26&gp=0.jpg","https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1315256422,3713498384&fm=26&gp=0.jpg"
-            ]
+            ],
+            orderId:"",
         },
         created: function() {
-            // this.init();
+            this.init();
 
         },
         filters: {
@@ -31,6 +33,31 @@ define(function(require, exports, module) {
         methods: {
           init(){
             // this.specHeader = api.pageParam.header;
+            this.orderId = api.pageParam.orderId;
+            var that = this;
+            Http.ajax({
+              data: {
+                "idempotentId": "",
+                "language": "",
+                "pageNo": 0,
+                "pageSize": 0,
+                "roleId": _g.getLS('roleId'),
+                "orderId": that.orderId,
+                "systemType": "",
+                // "taskId": that.search,
+                // "userId": _g.getLS('userId')
+              },
+              url: '/api/list/getOrderDetail',
+              isSync: true,
+              lock: false,
+              success: function(ret) {
+                that.orderList=ret.data;
+                console.log(ret);
+              },
+              error: function(err) {
+                alert(err)
+              }
+            });
 
           },
           onPreviewTap: function (index) {

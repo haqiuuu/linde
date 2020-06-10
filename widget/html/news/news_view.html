@@ -1,12 +1,12 @@
 <div class="ui-main">
     <div class="ui-search">
-        <div class="ui-search_icon"></div>
+        <div class="ui-search_icon" v-hammer:tap="onSearchTap"></div>
         <input type="text" v-model="search" :placeholder="LANGUAGE.search">
     </div>
     <div class="ui-item" v-for="(item,index) in itemsList" :key="index" v-hammer:tap="()=>onDetailTap(item.newsId)">
         <div class="ui-item_date">
             <div class="ui-item_icon"></div>
-            <div class="ui-item_time">{{item.publishTime}}</div>
+            <div class="ui-item_time">{{item.publishTime.slice(0,10)}}</div>
         </div>
         <div class="ui-item_content">
             <span>{{item.newsContent}}</span>

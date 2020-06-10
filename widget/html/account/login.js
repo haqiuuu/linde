@@ -96,8 +96,8 @@ define(function (require, exports, module) {
                       _g.setLS('ifNotify', ret.data.ifNotify);
                       // _g.setLS('createTime', res.data.);
                       // _g.setLS('updateTime', res.data.);
-                      _g.setLS('customCode', ret.data.customCode);
-                      _g.setLS('truckSN', ret.data.truckSN);
+                      _g.setLS('customCode', ret.data.shipTo1);
+                      _g.setLS('truckSN', ret.data.truckId);
                       _g.setLS('tocken', ret.data.token);
                       _g.execScript({
                           winName: 'root',

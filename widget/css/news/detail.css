@@ -16,6 +16,9 @@
   text-align: center;
 
 }
+input{
+  -webkit-user-select:text !important;
+}
 .content-end{
   display: flex;
   justify-content: flex-end;

@@ -30,6 +30,7 @@ define(function(require, exports, module) {
                 }
             })
           },
+          
           init(){
             this.businessName = api.pageParam.businessName;
             // this.businessList = api.pageParam.businessList;

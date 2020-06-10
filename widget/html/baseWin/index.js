@@ -94,9 +94,9 @@ define(function (require, exports, module) {
           lock: true,
           success: function(ret) {
             if(type=='register'){
-              url=ret.data.list[0].url
-            }else if(type=='facebook'){
               url=ret.data.list[1].url
+            }else if(type=='facebook'){
+              url=ret.data.list[0].url
             }else {
               url=ret.data.list[2].url
             }

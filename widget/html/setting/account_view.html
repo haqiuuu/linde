@@ -19,13 +19,13 @@
       <div class="ui-setCode">
           <div class="ui-setCode_icon"></div>
           <span>{{language.setting_account_code}}</span>
-          <div class="ui-mailbox_account">{{userInfo.customCode}}</div>
+          <div class="ui-mailbox_account">{{userInfo.shipTo1}}</div>
       </div>
       <!-- <div class="ui-setTruck" v-hammer:tap="onOpenmsg"> -->
       <div class="ui-setTruck">
           <div class="ui-setTruck_icon"></div>
           <span>{{language.setting_account_truck}}</span>
-          <div class="ui-mailbox_account">{{userInfo.truckSN}}</div>
+          <div class="ui-mailbox_account">{{userInfo.truckId}}</div>
       </div>
       <div class="ui-resetPassword" v-hammer:tap="onOpenReset">
           <div class="ui-resetPassword_icon"></div>
@@ -56,7 +56,29 @@
       </div>
     </div>
   </div>
-
+  <!--验证码  -->
+  <div class="message-wrapper" v-if="emailShow">
+    <div class="message-bac">
+    </div>
+    <div class="message-contet">
+      <div class="content-info">
+        <div class="ui-form__item ui-form__code" style="margin-bottom:.6rem;">
+            <input type="text" :placeholder="language.account_company_email_placeholder" v-model="email"/>
+        </div>
+        <div class="ui-form__item ui-form__code">
+            <input type="text" :placeholder="language.account_code_placeholder" v-model="code"/>
+            <div class="ui-form__getCode" v-hammer:tap="getCode" v-show="!isGetCode">
+              <!--  v-hammer:tap="getCode"-->
+                {{language.account_get_code_title}}
+            </div>
+            <div class="ui-form__getCode ui_disabled" v-show="isGetCode">{{time}}</div>
+        </div>
+      </div>
+      <div class="button-group" v-hammer:tap="onSubmit">
+          <span>OK</span>
+      </div>
+    </div>
+  </div>
   <!--弹窗2-->
   <div class="message-wrapper" v-show="showReset">
     <div class="message-bac">

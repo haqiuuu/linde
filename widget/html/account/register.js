@@ -253,7 +253,12 @@ define(function (require, exports, module) {
                 	lock: true,
                 	success: function(ret) {
                     console.log("login-success");
-                    api.closeWin();
+                    _g.toast(ret.message)
+                    if(ret.message == 'Insert Success'){
+                      api.closeWin();
+                    }
+
+
                   },
                 	error: function(err) {
                     alert("faild")

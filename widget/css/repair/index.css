@@ -16,6 +16,9 @@
 .ui-main {
   margin: 3.24rem 0.21rem 0 0.21rem;
 }
+input{
+  -webkit-user-select:text !important;
+}
 .ui-title {
   padding-left: 0.23rem;
   font-size: 0.3rem;

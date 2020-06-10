@@ -15,7 +15,12 @@ define(function(require, exports, module) {
             newpswd:"",
             renew:"",
             operateType:"",
-            operteInput:""
+            operteInput:"",
+            code:"",
+            time:60,
+            isGetCode:false,
+            email:"",
+            emailShow:false,
         },
         created: function() {
           this.init();
@@ -52,11 +57,12 @@ define(function(require, exports, module) {
 
           },
           onOpenEmail:function() {
-              this.operateType = "email";
-              this.showmessage=true;
-              this.title='Set email';
-              this.holder='Enter Your email';
-              this.operteInput = this.userInfo.email;
+              // this.operateType = "email";
+              // this.showmessage=true;
+              // this.title='Set email';
+              // this.holder='Enter Your email';
+              // this.operteInput = this.userInfo.email;
+              this.emailShow=true;
           },
           onOpenName:function() {
               this.operateType = "name";
@@ -167,6 +173,70 @@ define(function(require, exports, module) {
               });
               this.showReset=false;
           },
+          // 获取验证码
+          getCode: function () {
+              console.log('getCode');
+              clearInterval(this.timer);
+              let self = this;
+              this.isGetCode = true;
+              this.time = 60;
+              this.timer = setInterval(function () {
+                  if (self.time <= 0) {
+                      clearInterval(self.timer);
+                      self.isGetCode = false;
+                      return;
+                  }
+                  self.time--;
+
+              }, 1000);
+              Http.ajax({
+                data: {
+                  "email": this.email,
+                  "type":"reset_email_",
+                  "userId":_g.getLS("userId")
+                },
+                url: '/api/user/sendVerCode',
+                isSync: true,
+                lock: true,
+                success: function(ret) {
+                  console.log("code-success");
+                },
+                error: function(err) {
+                  alert("faild")
+                  console.log(JSON.stringify(err))
+                }
+              });
+          },
+          // 提交邮箱
+          onSubmit: function () {
+            var that =this;
+              Http.ajax({
+                data: {
+                  "email": this.email,
+                  "type":"reset_email_",
+                  "userId":_g.getLS("userId"),
+                  "verCode":this.code
+                },
+                url: '/api/user/updateEmail',
+                isSync: true,
+                lock: true,
+                success: function(ret) {
+                  console.log("code-success");
+                  if(ret.message == 'Update Success'){
+                    _g.toast(ret.message);
+                    that.emailShow=false;
+                  }else{
+                    _g.toast(ret.message);
+                    return
+                  }
+                },
+                error: function(err) {
+                  alert("faild")
+                  console.log(JSON.stringify(err))
+                }
+              });
+          },
+
           init(){
             var that = this
             Http.ajax({
