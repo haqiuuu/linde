@@ -246,6 +246,9 @@ define(function(require, exports, module) {
                 isSync: false,
                 lock: false,
                 success: function(ret) {
+                  if(ret.message == 'token 有误！'){
+                    alert("Identify Overdue ,Please Try To Login Again");
+                  }
                   that.userInfo = ret.data;
                 },
                 error: function(err) {

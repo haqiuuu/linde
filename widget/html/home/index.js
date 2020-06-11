@@ -433,20 +433,20 @@ define(function(require, exports, module) {
                 });
             },
             init(){
-              var ajpush = api.require('ajpush');
-               if(api.systemType == "android"){
-                   ajpush.init(function(ret) {
-                       var param = {alias:'user1',tags:['user']};
-                       ajpush.bindAliasAndTags(param,function(ret) {
-                       });
-                       ajpush.setListener(jpushListener);
-                   });
-               }else if(api.systemType == "ios"){
-                   ajpush.setListener(jpushListener);
-                   var param = {alias:'user2',tags:['user']};
-                   ajpush.bindAliasAndTags(param,function(ret) {
-                   });
-               }
+              // var ajpush = api.require('ajpush');
+              //  if(api.systemType == "android"){
+              //      ajpush.init(function(ret) {
+              //          var param = {alias:'user1',tags:['user']};
+              //          ajpush.bindAliasAndTags(param,function(ret) {
+              //          });
+              //          ajpush.setListener(jpushListener);
+              //      });
+              //  }else if(api.systemType == "ios"){
+              //      ajpush.setListener(jpushListener);
+              //      var param = {alias:'user2',tags:['user']};
+              //      ajpush.bindAliasAndTags(param,function(ret) {
+              //      });
+              //  }
 
 
 
